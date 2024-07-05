@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="advisorsignup.css">
+    <title>Advisor Signup</title>
+</head>
+
+<body>
+    <div class="container">
+     
+        <form id="Form1">
+            <h3>CREATE ACCOUNT</h3>
+            <br />
+            <h4>Setup Login Credentials</h4>
+            <br />
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="password"  placeholder="Password" required>
+            <input type="password" name="confirm"  placeholder="Confirm Password" required>
+
+            <div class="btn-box">
+                <button type="button" id="Next1">Next</button>
+            </div>
+        </form>
+
+        <form id="Form2">
+            <h3>CREATE ACCOUNT</h3>
+            <br />
+            <h4>Personal Details</h4>
+            <br />
+            <input type="text" name="name"  placeholder="Name" required>
+            <input type="text" name="company" placeholder="Company" required>
+            <input type="text" name="designation" placeholder="Designtion" required>
+            <input type="text" name="field"  placeholder="Field" required>
+            <input type="text" name="mobileno"  placeholder="Mobile number" required>
+
+            <div class="btn-box">
+                <button type="button" id="Back1">Back</button>
+                <button type="button" id="Next2">Next</button>
+            </div>
+        </form>
+
+        <form id="Form3">
+            <h3>CREATE ACCOUNT</h3>
+            <br />
+            <h4>Social Links and Qualifications</h4>
+            <br />
+            <input type="text" name="medium"  placeholder="Medium">
+            <input type="text" name="linkedin"  placeholder="Linkedin">
+            <input type="text"  name="github" placeholder="Github">
+            <br />
+            <br />
+            <div class="input-box message-box">
+
+            <textarea name="qualifications" id="#txt1" cols="35" rows="2.5" class="form-control" placeholder="Qualifications"></textarea>
+            <br />
+            <br />
+            <textarea name="work_experience" id="" cols="35" rows="2.5" class="form-control" placeholder="Work Experience"></textarea>
+            </div>
+            <div class="btn-box">
+                <button type="button" id="Back2">Back</button>
+                <button type="button">Submit</button>
+            </div>
+        </form>
+
+ 
+        <div class="step-row">
+
+            <div id="progress"></div>
+            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col"><small>Step 2 </small></div>
+            <div class="step-col"><small>Step 3</small></div>
+        </div>
+
+    </div>
+
+    <script>
+        var Form1 = document.getElementById("Form1");
+        var Form2 = document.getElementById("Form2");
+        var Form3 = document.getElementById("Form3");
+
+        var Next1 = document.getElementById("Next1");
+        var Next2 = document.getElementById("Next2");
+        var Back1 = document.getElementById("Back1");
+        var Back2 = document.getElementById("Back2");
+
+        var progress = document.getElementById("progress");
+
+
+        Next1.onclick = function () {
+            Form1.style.left = "-450px";
+            Form2.style.left = "40px";
+            progress.style.width = "240px"
+        }
+        Back1.onclick = function () {
+            Form1.style.left = "40px";
+            Form2.style.left = "450px";
+            progress.style.width = "120px"
+        }
+        Next2.onclick = function () {
+            Form2.style.left = "-450px";
+            Form3.style.left = "40px";
+            progress.style.width = "360px"
+        }
+        Back2.onclick = function () {
+            Form2.style.left = "40px";
+            Form3.style.left = "450px";
+            progress.style.width = "240px"
+        }
+
+    </script>
+
+
+</body>
+
+</html>
