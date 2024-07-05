@@ -15,6 +15,7 @@
 
 
   <title>StartupCompanion</title>
+  <link href="assets/img/logo1.jpg" rel="icon" style="width: 150px; height: 130px;">
 
   <link href="assets/css/style.css" rel="stylesheet">
 
