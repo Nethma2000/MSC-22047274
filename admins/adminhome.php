@@ -175,6 +175,22 @@ include('adminsession.php');
             </a>
           </li>
           <li>
+            <a href="../knowledge/Courses-add.php#Chapter">
+              <i class="bi bi-circle"></i><span>Create New Chapters</span>
+            </a>
+          </li>
+          <li>
+            <a href="../knowledge/Courses-add.php#Topic">
+              <i class="bi bi-circle"></i><span>Create New Topics</span>
+            </a>
+          </li>
+          <li>
+            <a href="../knowledge/addcoursecontent.php">
+              <i class="bi bi-circle"></i><span>Create Course Content</span>
+            </a>
+          </li>
+
+          <li>
             <!-- <a href="blog/admin/index.php?page=category">
               <i class="bi bi-circle"></i><span>Course materials</span> -->
             </a>

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include "../../Utils/Util.php";
+include "Utils/Util.php";
 if (isset($_SESSION['username']) &&
     isset($_SESSION['instructor_id'])) {
     include "Utils/Validation.php";
@@ -11,22 +11,23 @@ if (isset($_SESSION['username']) &&
 
    if ($_SERVER['REQUEST_METHOD'] == "POST") {
    $course_id = Validation::clean($_POST["course_id"]);
+   $chapter_id = Validation::clean($_POST["chapter_id"]);
+   $topic_id = Validation::clean($_POST["topic_id"]);
+   $data = "";
+   if (isset($_POST["text"])) {
+       $data = $_POST["text"];
+   }
 
    $db = new Database();
    $conn = $db->connect();
    $course = new Course($conn);
-
-   $chapters = $course->getChapters($course_id);
-   if ($chapters) {
-       foreach($chapters as $chapter){
-        echo "<option value='".$chapter['chapter_id']."'>". $chapter['title']."</option>";
-       }
-   }else {
-    echo 0;
-   }
+   $array_data = [$data, $course_id, $chapter_id, $topic_id];
+   $contents = $course->update_content($array_data);
+   
+   Util::redirect("updatecoursecontent.php", "content_id", "");
 }
 }else {
-	  
+      
     $em = "First login ";
     Util::redirect("../../login.php", "error", $em);
 }

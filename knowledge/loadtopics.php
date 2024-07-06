@@ -1,11 +1,13 @@
 <?php 
 session_start();
-include "../../Utils/Util.php";
+include "/Utils/Util.php";
 if (isset($_SESSION['username']) &&
     isset($_SESSION['instructor_id'])) {
-    include "../../Utils/Validation.php";
-    include "../../Database.php";
-    include "../../Models/Course.php";
+    include "Utils/Validation.php";
+    include "controller/Database.php";
+    // include "../../Models/Course.php";
+    include "controller/coursemodel.php";
+
 
 
 

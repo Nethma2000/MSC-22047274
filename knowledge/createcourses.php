@@ -1,3 +1,27 @@
+<?php  
+
+class Util{
+	static function redirect($location, $type, $em, $data=""){
+	    header("Location: $location?$type=$em&$data");
+	    exit;
+	}
+
+
+}
+?>
+
+<?php
+// Example database connection using PDO
+$pdo = new PDO('mysql:host=localhost;dbname=EduPulseDB', 'root', '');
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+// Query to fetch courses
+$query = "SELECT course_id, title FROM course";
+$stmt = $pdo->query($query);
+$courses = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all courses as associative array
+
+?>
+
 
 <?php 
 session_start();
@@ -22,17 +46,7 @@ if (isset($_SESSION['username']) &&
     }
 ?>
 
-<?php  
 
-class Util{
-	static function redirect($location, $type, $em, $data=""){
-	    header("Location: $location?$type=$em&$data");
-	    exit;
-	}
-
-
-}
-?>
 
 <div class="container">
     <!-- Form for creating a course -->
@@ -114,7 +128,7 @@ class Util{
 
     <form id="Topic" 
           class="mt-5"
-          action="Action/course-topic-add.php"
+          action="addtopic.php"
           method="POST">
         <h2>Create a New Topic</h2>
         <div class="mb-3">
@@ -133,7 +147,11 @@ class Util{
                     id="chapterSelect" 
                     name="chapter_id" 
                     required>
+
+                 
             </select>
+
+            
         </div>
         <div class="mb-3">
             <label for="topicTitle" class="form-label">Topic Title</label>
