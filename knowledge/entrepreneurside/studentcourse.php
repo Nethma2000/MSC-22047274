@@ -1,8 +1,8 @@
 <?php 
-include "../Models/Certificate.php";
-include "../Models/Course.php";
+// include "../Models/Certificate.php";
+include "../controller/coursemodel.php";
 
-include "../Database.php";
+include "../controller/Database.php";
 
 
 function getSomeCourses($offset, $num){

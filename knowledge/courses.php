@@ -2,6 +2,7 @@
 session_start();
 include "Utils/Util.php";
 
+
     include "controller/admincourse.php";
     $row_count = getCount();
 
@@ -20,7 +21,7 @@ include "Utils/Util.php";
     $courses = getSomeCourses($offset, $row_num);
     # Header
     $title = "EduPulse - Courses ";
-    // include "inc/Header.php";
+    include "adheader.php";
 
 ?>
 

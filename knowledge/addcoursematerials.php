@@ -1,11 +1,13 @@
 <?php 
 session_start();
 include "Utils/Validation.php";
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['instructor_id'])) {
+// if (isset($_SESSION['username']) &&
+    // isset($_SESSION['instructor_id'])) {
 
 
   $title = "EduPulse - Upload Courses Materials ";
+  include "adheader2.php";
+
 ?>
 
 <?php  
@@ -52,8 +54,3 @@ class Util{
 </div>
  <!-- Footer -->
 
-<?php
- }else { 
-$em = "First login ";
-Util::redirect("../login.php", "error", $em);
-} ?>

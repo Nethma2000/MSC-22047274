@@ -2,7 +2,7 @@
 
 class Database {
 	private $host = "localhost";
-	private $dbName = "startupcompanion";
+	private $dbName = "EduPulseDB";
 	private $uName = "root";
 	private $pass = "";
 	private $conn;

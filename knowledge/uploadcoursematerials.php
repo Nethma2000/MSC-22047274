@@ -14,8 +14,8 @@ session_start();
 // include "../../Utils/Util.php";
 include "Utils/Validation.php";
 
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['instructor_id'])) {
+// if (isset($_SESSION['username']) &&
+//     isset($_SESSION['instructor_id'])) {
     
    if (isset($_FILES['file']['name'])) {
       include "Database.php";
@@ -79,9 +79,4 @@ if (isset($_SESSION['username']) &&
       $em = "unknown error occurred!";
            Util::redirect("Courses-Materials-add.php", "error", $em);
    } 
-}else { 
-   $em = "First login ";
-   Util::redirect("../../login.php", "error", $em);
-} 
-
 

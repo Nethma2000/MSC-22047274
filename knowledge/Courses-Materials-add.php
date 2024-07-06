@@ -2,12 +2,13 @@
 session_start();
 // include "../Utils/Util.php";
 include "Utils/Validation.php";
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['instructor_id'])) {
+// if (isset($_SESSION['username']) &&
+//     isset($_SESSION['instructor_id'])) {
 
 
   $title = "EduPulse - Upload Courses Materials ";
-  // include "inc/Header.php";
+  include "adheader2.php";
+
 ?>
 <div class="container">
   <!-- NavBar -->
@@ -43,8 +44,3 @@ if (isset($_SESSION['username']) &&
 </div>
  <!-- Footer -->
 
-<?php
- }else { 
-$em = "First login ";
-Util::redirect("../login.php", "error", $em);
-} ?>

@@ -2,12 +2,12 @@
 
 
 <?php 
-    include "../controller/Database.php";
+    // include "../controller/Database.php";
     include "../Utils/Util.php";
 
 session_start();
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['student_id'])) {
+// if (isset($_SESSION['username']) &&
+//     isset($_SESSION['student_id'])) {
 
     include "studentcourse.php";
     $row_count = getCount();
@@ -28,6 +28,7 @@ if (isset($_SESSION['username']) &&
 
     # Header
     $title = "EduPulse - Students ";
+    include "header.php";
 
 ?>
 <div class="container">
@@ -51,7 +52,7 @@ if (isset($_SESSION['username']) &&
           <h5 class="card-title"><?=$course["title"]?></h5>
           <p class="card-text"><?=$course["description"]?></p>
           <p class="card-text"><small class="text-body-secondary"><?=$course["created_at"]?></small></p>
-          <a href="Course.php?course_id=<?=$course["course_id"]?>" class="btn btn-primary">View Course</a>
+          <a href="courseview.php?course_id=<?=$course["course_id"]?>" class="btn btn-primary">View Course</a>
         </div>
       </div>
     </div>
@@ -77,7 +78,7 @@ if (isset($_SESSION['username']) &&
             
             if ($prev_btn){
             ?>
-            <a href="Courses.php?page=<?=$prev?>" class="btn btn-secondary m-2">Prev</a>
+            <a href="allcourses.php?page=<?=$prev?>" class="btn btn-secondary m-2">Prev</a>
            <?php }else { ?>
             <a href="#" class="btn btn-secondary m-2 disabled">Prev</a>
             
@@ -89,9 +90,9 @@ if (isset($_SESSION['username']) &&
           
            for($i = $push_mid; $i < 5 + $page; $i++){
             if($i == $page){ ?>
-             <a href="Courses.php?page=<?=$i?>" class="btn btn-success m-2"><?=$i?></a>
+             <a href="allcourses.php?page=<?=$i?>" class="btn btn-success m-2"><?=$i?></a>
            <?php }else{ ?>
-             <a href="Courses.php?page=<?=$i?>" class="btn btn-secondary m-2"><?=$i?></a>
+             <a href="allcourses.php?page=<?=$i?>" class="btn btn-secondary m-2"><?=$i?></a>
 
            <?php } 
            if($last_page <= $i)break;
@@ -99,7 +100,7 @@ if (isset($_SESSION['username']) &&
             } 
             if($next_btn){
             ?>
-            <a href="Courses.php?page=<?=$next?>" class="btn btn-secondary m-2">Next</a>
+            <a href="allcourses.php?page=<?=$next?>" class="btn btn-secondary m-2">Next</a>
         <?php }else { ?>
            <a href="#" class="btn btn-secondary m-2 disabled" des>Next</a>
         <?php } ?>
@@ -109,8 +110,3 @@ if (isset($_SESSION['username']) &&
 
  <!-- Footer -->
 
-<?php
- }else { 
- $em = "First login ";
- Util::redirect("../login.php", "error", $em);
-} ?>

@@ -15,6 +15,8 @@ class Util{
 session_start();
 // include "../Utils/Util.php";
 include "Utils/Validation.php";
+include "adheader2.php";
+
 if (isset($_SESSION['username']) &&
     isset($_SESSION['instructor_id'])) {
     include "controller/course.php";

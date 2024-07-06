@@ -10,6 +10,8 @@ if (isset($_SESSION['username']) &&
 
     # Header
     $title = "EduPulse - Create Course ";
+    include "adheader2.php";
+
     
     $title = $description  ="";
     if (isset($_GET["title"])) {

@@ -1,8 +1,8 @@
 <?php 
 session_start();
 // include "../Utils/Util.php";
- if (isset($_SESSION['username']) &&
-   isset($_SESSION['instructor_id'])) {
+//  if (isset($_SESSION['username']) &&
+//    isset($_SESSION['instructor_id'])) {
   
     include "controller/coursesmaterial.php";
   
@@ -25,7 +25,7 @@ session_start();
     $CoursesMaterials = getSomeCoursesMaterialsByInstructorId($offset, $row_num, $instructor_id);
     # Header
     $title = "EduPulse - Courses Materials ";
-    // include "inc/Header.php";
+    include "adheader2.php";
 
 ?>
 
@@ -119,8 +119,3 @@ class Util{
  <!-- Footer -->
 <!-- <?php include "inc/Footer.php"; ?> -->
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
-<?php 
- }else { 
- $em = "First login ";
- Util::redirect("../login.php", "error", $em);
- } ?> 
