@@ -1,3 +1,6 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
 <?php
 
 // session_start();
@@ -35,9 +38,8 @@ else{
         values('$name','$email','$field','$age','$password','','$mobile')");
     
         $stmt->execute();
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    //     echo  '<div class="alert alert-success">
+    //  echo  '<div class="alert alert-success">
     //     <strong>Success!</strong> Registration Successful.
     // </div>';
     

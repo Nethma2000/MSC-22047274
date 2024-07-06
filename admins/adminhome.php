@@ -147,7 +147,7 @@ include('adminsession.php');
           </li>
           <li>
             <a href="blog/admin/index.php?page=category">
-              <i class="bi bi-circle"></i><span>Blog Categories</span>
+              <i class="bi bi-circle"></i><span>Blog Catories</span>
             </a>
           </li>
          
@@ -155,25 +155,31 @@ include('adminsession.php');
       </li><!-- End Icons Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav1" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-gem"></i><span>Learning Management</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
+            <a href="../knowledge/courses.php">
+              <i class="bi bi-circle"></i><span>All courses</span>
             </a>
           </li>
           <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
+            <a href="../knowledge/coursematerials.php">
+              <i class="bi bi-circle"></i><span>Course materials</span>
             </a>
           </li>
           <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
+            <a href="../knowledge/createcourses.php">
+              <i class="bi bi-circle"></i><span>Create New Courses</span>
             </a>
           </li>
+          <li>
+            <!-- <a href="blog/admin/index.php?page=category">
+              <i class="bi bi-circle"></i><span>Course materials</span> -->
+            </a>
+          </li>
+         
         </ul>
       </li><!-- End Icons Nav -->
 

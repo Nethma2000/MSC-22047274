@@ -143,10 +143,34 @@ include('entreprenursession.php');
           <i class="bi bi-menu-button-wide"></i><span>Forum</span></i>
         </a>
        
-        <li class="nav-item">
+        <!-- <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
           <i class="bi bi-menu-button-wide"></i><span>Learning</span></i>
+        </a> -->
+
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Learning</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../knowledge/entrepreneurside/allcourses.php">
+              <i class="bi bi-circle"></i><span>All Courses</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-remix.html">
+              <i class="bi bi-circle"></i><span>Enrolled Courses</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-boxicons.html">
+              <i class="bi bi-circle"></i><span>Cerificates</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
 
         <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
@@ -169,6 +193,9 @@ include('entreprenursession.php');
       <!-- End Components Nav -->
 
    
+
+
+      
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
