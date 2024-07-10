@@ -2,12 +2,12 @@
 <?php 
 session_start();
 include "Utils/Util.php";
-include "Utils/Validation.php";
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['instructor_id'])) {
+// include "Utils/Validation.php";
+// if (isset($_SESSION['username']) &&
+//     isset($_SESSION['instructor_id'])) {
     include "controller/course.php";
 
-    $instructor_id = $_SESSION['instructor_id'];
+    // $instructor_id = $_SESSION['instructor_id'];
     if (!isset($_SESSION['content'])) {
         Util::redirect("addcoursecontent", "error", "");
     }
@@ -99,8 +99,7 @@ if (isset($_SESSION['username']) &&
    
 </script>
 
-<?php
- }else { 
-$em = "First login ";
-Util::redirect("../login.php", "error", $em);
-} ?>
+<!-- 
+  }else { 
+ $em = "First login ";
+Util::redirect("../login.php", "error", $em); -->

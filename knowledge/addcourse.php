@@ -14,8 +14,8 @@ class Util{
 <?php 
 session_start();
 // include "../../Utils/Util.php";
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['instructor_id'])) {
+// if (isset($_SESSION['username']) &&
+//     isset($_SESSION['instructor_id'])) {
     include "Utils/Validation.php";
     include "controller/Database.php";
     include "controller/coursemodel.php";
@@ -26,7 +26,7 @@ if (isset($_SESSION['username']) &&
 
    $title   = Validation::clean($_POST["title"]);
    $description = Validation::clean($_POST["description"]);
-   $instructor_id = $_SESSION['instructor_id'];
+//    $instructor_id = $_SESSION['instructor_id'];
    $cover = "default_course.jpg";
 
    $data = "title=".$title."&description=".$description;
@@ -50,7 +50,7 @@ if (isset($_SESSION['username']) &&
             $allowed_exs = array('jpg', 'jpeg', 'png');
             if(in_array($img_ex_to_lc, $allowed_exs)){
                $new_img_name = uniqid("COVER-", true).'.'.$img_ex_to_lc;
-               $img_upload_path = '../../Upload/thumbnail/'.$new_img_name;
+               $img_upload_path = 'Upload/thumbnail/'.$new_img_name;
                move_uploaded_file($tmp_name, $img_upload_path);
                // update the Database
                 $cover = $new_img_name;
@@ -83,7 +83,7 @@ if (isset($_SESSION['username']) &&
         $em = "REQUEST Error";
         Util::redirect("Courses-add.php", "error", $em);
     }
-}else {
-    $em = "First login ";
-    Util::redirect("../../login.php", "error", $em);
-}
+// }else {
+//     $em = "First login ";
+//     Util::redirect("../../login.php", "error", $em);
+// }

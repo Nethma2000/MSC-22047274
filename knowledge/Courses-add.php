@@ -15,16 +15,22 @@ class Util{
 
 <?php 
 session_start();
-// include "../Utils/Util.php";
 include "Utils/Validation.php";
 include "adheader2.php";
+// include "controller/Database.php";
 
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['instructor_id'])) {
+
+
+// if (isset($_SESSION['username']) &&
+//     isset($_SESSION['instructor_id'])) {
     include "controller/course.php";
-    $instructor_id = $_SESSION['instructor_id'];
-    $courses = getCoursesByInstructorId($instructor_id);
+    // $instructor_id = $_SESSION['instructor_id'];
 
+    // Example database connection using PDO
+   
+    
+ 
+    
     # Header
     $title = "EduPulse - Create Course ";
     
@@ -176,9 +182,3 @@ if (isset($_SESSION['username']) &&
 
 
  
-
-<?php
- }else { 
-$em = "First login ";
-Util::redirect("../login.php", "error", $em);
-} ?>

@@ -18,7 +18,7 @@ include "Utils/Validation.php";
 //     isset($_SESSION['instructor_id'])) {
     
    if (isset($_FILES['file']['name'])) {
-      include "Database.php";
+      // include "controller/Database.php";
       include "controller/coursesmaterial.php";
      
        $db = new Database();
@@ -26,7 +26,7 @@ include "Utils/Validation.php";
 
        $courses_material = new CoursesMaterial($conn);
   
-       $instructor_id = $_SESSION['instructor_id'];
+      //  $instructor_id = $_SESSION['instructor_id'];
 
        $VIDEO = array('mp4', 'mkv', 'vid');
        $IMAGE = array('jpg', 'jpeg', 'png');
@@ -59,7 +59,9 @@ include "Utils/Validation.php";
             $URL = 'Upload/CoursesMaterials/'.$type.'/'.$new_file_name;
             move_uploaded_file($file_tmp_name, $file_upload_path);
             // add to the Database
-            $res = $courses_material->insert($instructor_id, $URL, $type);
+            // $res = $courses_material->insert($instructor_id, $URL, $type);
+            $res = $courses_material->insert($URL, $type);
+
             if ($res) {
                $sm = "New Courses Material Uploaded!";
                Util::redirect("Courses-Materials-add.php", "success", $sm);

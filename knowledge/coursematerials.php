@@ -1,3 +1,17 @@
+
+
+
+<?php  
+
+class Util{
+	static function redirect($location, $type, $em, $data=""){
+	    header("Location: $location?$type=$em&$data");
+	    exit;
+	}
+
+
+}
+?>
 <?php 
 session_start();
 // include "../Utils/Util.php";
@@ -6,8 +20,8 @@ session_start();
   
     include "controller/coursesmaterial.php";
   
-    $instructor_id = $_SESSION['instructor_id'];
-    $row_count = getCountByInstructorId($instructor_id);
+    // $instructor_id = $_SESSION['instructor_id'];
+    $row_count = getCount();
 
     $page = 1;
     $row_num = 5;
@@ -22,24 +36,14 @@ session_start();
     }else $page = $_GET['page'];
     }
     if($page != 1) $offset = ($page-1) * $row_num;
-    $CoursesMaterials = getSomeCoursesMaterialsByInstructorId($offset, $row_num, $instructor_id);
+    $CoursesMaterials = getSomeCoursesMaterials($offset, $row_num);
     # Header
     $title = "EduPulse - Courses Materials ";
     include "adheader2.php";
 
 ?>
 
-<?php  
 
-class Util{
-	static function redirect($location, $type, $em, $data=""){
-	    header("Location: $location?$type=$em&$data");
-	    exit;
-	}
-
-
-}
-?>
 
 <div class="container">
   <!-- NavBar -->

@@ -1,8 +1,13 @@
+
 <?php
 	session_start();
 ?>
+
+
 <!DOCTYPE html>
 <html>
+
+
 <head>
 	<meta charset="utf-8">
 	<title>Manage Inquiries</title>
@@ -21,7 +26,10 @@
 		}
 	</style>
 </head>
+
+
 <body>
+	
 <h1 style="background-color: #FFC451;height: 70px;text-align:center;padding-top:15px;color:black;font-weight:bold" class="page-header text-center">Manage Inquiries</h1>
 
 <div class="container">

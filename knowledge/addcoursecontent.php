@@ -19,8 +19,8 @@ include "Utils/Util.php";
 include "Utils/Validation.php";
 
 
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['instructor_id'])) {
+// if (isset($_SESSION['username']) &&
+//     isset($_SESSION['instructor_id'])) {
         include "controller/course.php";
     //     $instructor_id = $_SESSION['instructor_id'];
     // $courses = getCoursesByInstructorId($instructor_id);
@@ -131,7 +131,7 @@ if (isset($_SESSION['username']) &&
  
 
 <?php
- }else { 
-$em = "First login ";
-Util::redirect("../login.php", "error", $em);
-} ?>
+//  }else { 
+// $em = "First login ";
+// Util::redirect("../login.php", "error", $em);
+// } ?>

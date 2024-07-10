@@ -1,3 +1,218 @@
+
+<?php
+include('../admins/adminsession.php');
+?>
+ <!-- ======= Header ======= -->
+
+ <!-- <link href="../admins/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="../admins/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <!-- <link href="../admins/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"> -->
+  <!-- <link href="../admins/assets/vendor/quill/quill.snow.css" rel="stylesheet"> -->
+  <!-- <link href="../admins/assets/vendor/quill/quill.bubble.css" rel="stylesheet"> -->
+  <!-- <link href="../admins/assets/vendor/remixicon/remixicon.css" rel="stylesheet"> -->
+  <!-- <link href="../admins/assets/vendor/simple-datatables/style.css" rel="stylesheet"> -->
+ <link href="../admins/assets/css/style.css" rel="stylesheet">
+
+ <header id="header" class="header fixed-top d-flex align-items-center">
+
+<div class="d-flex align-items-center justify-content-between">
+  <a href="adminhome.php" class="logo d-flex align-items-center">
+
+    <span class="d-none d-lg-block">Admin Dashboard</span>
+  </a>
+  <i class="bi bi-list toggle-sidebar-btn"></i>
+</div>
+
+
+
+<nav class="header-nav ms-auto">
+  <ul class="d-flex align-items-center">
+
+    <li class="nav-item d-block d-lg-none">
+      <a class="nav-link nav-icon search-bar-toggle " href="#">
+        <i class="bi bi-search"></i>
+      </a>
+    </li><!-- End Search Icon-->
+
+  
+
+    <li class="nav-item dropdown pe-3">
+
+      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+        <img src="../assets/img/userimg.png" alt="Profile" class="rounded-circle">
+        <span class="d-none d-md-block dropdown-toggle ps-2">Welcome <?php echo $loggedin_session; ?></span>
+      </a><!-- End Profile Iamge Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <li class="dropdown-header">
+          <h6><?php echo $loggedin_session; ?></span>
+          </h6>
+          <span>Admin</span>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-gear"></i>
+            <span>Account Settings</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+            <i class="bi bi-question-circle"></i>
+            <span>Need Help?</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="../index.html">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Sign Out</span>
+          </a>
+        </li>
+
+      </ul><!-- End Profile Dropdown Items -->
+    </li><!-- End Profile Nav -->
+
+  </ul>
+</nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+<ul class="sidebar-nav" id="sidebar-nav">
+
+  <li class="nav-item">
+    <a class="nav-link " href="adminhome.php">
+      <i class="bi bi-grid"></i>
+      <span>Dashboard</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
+  
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-gem"></i><span>Manage Blog</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <li>
+        <a href="blog/admin/index.php?page=posts">
+          <i class="bi bi-circle"></i><span>Blog articles</span>
+        </a>
+      </li>
+      <li>
+        <a href="blog/admin/index.php?page=category">
+          <i class="bi bi-circle"></i><span>Blog Catories</span>
+        </a>
+      </li>
+     
+    </ul>
+  </li><!-- End Icons Nav -->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-gem"></i><span>Learning Management</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <li>
+        <a href="../knowledge/courses.php">
+          <i class="bi bi-circle"></i><span>All courses</span>
+        </a>
+      </li>
+      <li>
+        <a href="../knowledge/coursematerials.php">
+          <i class="bi bi-circle"></i><span>Course materials</span>
+        </a>
+      </li>
+      <li>
+        <a href="../knowledge/createcourses.php">
+          <i class="bi bi-circle"></i><span>Create New Courses</span>
+        </a>
+      </li>
+      <li>
+        <a href="../knowledge/Courses-add.php#Chapter">
+          <i class="bi bi-circle"></i><span>Create New Chapters</span>
+        </a>
+      </li>
+      <li>
+        <a href="../knowledge/Courses-add.php#Topic">
+          <i class="bi bi-circle"></i><span>Create New Topics</span>
+        </a>
+      </li>
+      <li>
+        <a href="../knowledge/addcoursecontent.php">
+          <i class="bi bi-circle"></i><span>Create Course Content</span>
+        </a>
+      </li>
+
+      <li>
+        <!-- <a href="blog/admin/index.php?page=category">
+          <i class="bi bi-circle"></i><span>Course materials</span> -->
+        </a>
+      </li>
+     
+    </ul>
+  </li><!-- End Icons Nav -->
+
+  <li class="nav-item">
+
+    <a class="nav-link collapsed" href="../advisors/advisorscrud/index.php">
+      <i class="bi bi-person"></i>
+      <span>Advisors Section</span>
+    </a>
+
+    <a class="nav-link collapsed" href="../owners/advisorscrud/index.php">
+      <i class="bi bi-person"></i>
+      <span>Owners Section</span>
+    </a>
+
+
+
+    <a class="nav-link collapsed" href="inquiries.php">
+      <i class="bi bi-person"></i>
+      <span>Inquiries</span>
+    </a>
+    <!-- <a class="nav-link collapsed" href="../advisors/advisorscrud/index.php">
+      <i class="bi bi-person"></i>
+      <span>Advisors</span>
+    </a> -->
+  </li><!-- End Profile Page Nav -->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="faq/addfaq.php">
+      <i class="bi bi-question-circle"></i>
+      <span>F.A.Q</span>
+    </a>
+  </li><!-- End F.A.Q Page Nav -->
+
+
+
+
+</ul>
+
+</aside><!-- End Sidebar-->
+
+
 <?php 
 session_start();
 include "Utils/Util.php";
@@ -25,15 +240,14 @@ include "Utils/Util.php";
 
 ?>
 
-<div class="container">
+<div class="container" style="margin-left: 300px;">
   <!-- NavBar -->
-  <!-- <?php include "inc/NavBar.php"; ?> -->
   
   <div class="list-table pt-5">
   <?php if ($courses) { ?>
   <h4>All Courses (<?=$row_count?>)</h4>
 
-  <table class="table table-bordered">
+  <table class="table table-bordered" style="width: 1000px;" >
       <tr>
         <th>#Id</th>
         <th>Full name</th>
@@ -43,7 +257,7 @@ include "Utils/Util.php";
       <?php foreach ($courses as $course) {?>
       <tr>
       <td><?=$course["course_id"]?></td>
-       <td><a href="course.php?course_id=<?=$course["course_id"]?>"><?=$course["title"]?></a></td>
+      <td><a href="entrepreneurside/courseview.php?course_id=<?=$course["course_id"]?>"><?=$course["title"]?></a></td>
        <!-- <td class="status"> <?=$course["status"]?></td> -->
        <!-- <td class="action_btn">
         <?php  
@@ -142,3 +356,17 @@ include "Utils/Util.php";
     });
   }
 </script>
+
+ <!-- Vendor JS Files -->
+ <script src="../admins/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../admins/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../admins/assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../admins/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../admins/assets/vendor/quill/quill.min.js"></script>
+  <script src="../admins/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../admins/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../admins/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../admins/assets/js/main.js"></script>
+

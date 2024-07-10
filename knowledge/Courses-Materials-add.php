@@ -1,7 +1,9 @@
 <?php 
 session_start();
-// include "../Utils/Util.php";
+// include "/Utils/Util.php";
 include "Utils/Validation.php";
+include "controller/Database.php";
+
 // if (isset($_SESSION['username']) &&
 //     isset($_SESSION['instructor_id'])) {
 
