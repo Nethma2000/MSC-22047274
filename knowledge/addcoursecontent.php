@@ -1,11 +1,9 @@
 
 
 <?php
-// Example database connection using PDO
-$pdo = new PDO('mysql:host=localhost;dbname=EduPulseDB', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=startupcompanion', 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Query to fetch courses
 $query = "SELECT course_id, title FROM course";
 $stmt = $pdo->query($query);
 $courses = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all courses as associative array
@@ -19,15 +17,11 @@ include "Utils/Util.php";
 include "Utils/Validation.php";
 
 
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
         include "controller/course.php";
-    //     $instructor_id = $_SESSION['instructor_id'];
-    // $courses = getCoursesByInstructorId($instructor_id);
+ 
 
 
-    # Header
-    $title = "EduPulse - Create Course ";
+    $title = "StartupCompanion | Navigate your startup journey";
     include "adheader2.php";
     
     $title = $description  ="";
@@ -40,10 +34,8 @@ include "Utils/Validation.php";
 ?>
 
 <div class="container">
-  <!-- NavBar -->
 <div class="container mt-5">
 
-    <!-- Form for creating course content -->
     <form action="createcoursecontent.php" 
           class="border p-5"
           method="POST">
@@ -131,7 +123,4 @@ include "Utils/Validation.php";
  
 
 <?php
-//  }else { 
-// $em = "First login ";
-// Util::redirect("../login.php", "error", $em);
-// } ?>
+ ?>

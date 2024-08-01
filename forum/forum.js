@@ -12,7 +12,7 @@ success: function(data) {
     for (var i=0; i<data.length; i++) {
         var commentId = data[i].id;
         if(data[i].comment == 0){
-        var row = $('<tr><td><b><img src="forumimg.jpg" width="30px" height="30px" />' + data[i].commenter + ' :<i> '+ data[i].date + ':</i></b></br><p style="padding-left:80px">' + data[i].post + '</br><a data-toggle="modal" data-id="'+ commentId +'" title="Add this item" class="open-ReplyModal" href="#ReplyModal" style="color:purple;font-weight:bold">Reply</a>'+'</p></td></tr>');
+        var row = $('<tr><td><b><img src="forumimg.jpg" width="30px" height="30px" />' + data[i].commenter + ' :<i> '+ data[i].date + ':</i></b></br><p style="padding-left:80px">' + data[i].post + '</br><a data-toggle="modal" data-id="'+ commentId +'" title="Add this item" class="open-ReplyModal" href="#ReplyModal" style="color:#1434A4;font-weight:bold">Reply</a>'+'</p></td></tr>');
         $('#record').append(row);
         for (var r = 0; (r < data.length); r++)
                 {
@@ -47,6 +47,8 @@ $(document).ready(function() {
 		var id = document.forms["frm"]["Pcommentid"].value;
 		var name = document.forms["frm"]["name"].value;
 		var msg = document.forms["frm"]["msg"].value;
+		var forumfield = document.forms["frm"]["forumfield"].value;
+
 		if(name!="" && msg!=""){
 			$.ajax({
 				url: "forum-questions-add.php",
@@ -54,7 +56,8 @@ $(document).ready(function() {
 				data: {
 					id: id,
 					name: name,
-					msg: msg,			
+					msg: msg,		
+					forumfield: forumfield,
 				},
 				cache: false,
 				success: function(dataResult){
@@ -64,6 +67,7 @@ $(document).ready(function() {
 						document.forms["frm"]["Pcommentid"].value = "";
 						document.forms["frm"]["name"].value = "";
 						document.forms["frm"]["msg"].value = "";
+						document.forms["frm"]["forumfield"].value = "";
 						LoadData(); 						
 					}
 					else if(dataResult.statusCode==201){
@@ -86,6 +90,7 @@ $(document).ready(function() {
 		var id = document.forms["frm1"]["Rcommentid"].value;
 		var name = document.forms["frm1"]["Rname"].value;
 		var msg = document.forms["frm1"]["Rmsg"].value;
+
 		if(name!="" && msg!=""){
 			$.ajax({
 				url: "forum-questions-add.php",
@@ -93,7 +98,7 @@ $(document).ready(function() {
 				data: {
 					id: id,
 					name: name,
-					msg: msg,			
+					msg: msg,	
 				},
 				cache: false,
 				success: function(dataResult){
@@ -103,6 +108,7 @@ $(document).ready(function() {
 						document.forms["frm1"]["Rcommentid"].value = "";
 						document.forms["frm1"]["Rname"].value = "";
 						document.forms["frm1"]["Rmsg"].value = "";
+
 						LoadData(); 
 						$("#ReplyModal").modal("hide");
 					}

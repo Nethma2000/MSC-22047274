@@ -1,5 +1,4 @@
 <?php 
-// include "../Models/Certificate.php";
 include "../controller/coursemodel.php";
 
 include "../controller/Database.php";
@@ -117,5 +116,3 @@ function getFirstTopicByCourseId($course_id){
 	return $Topics[0];
 }
 
-// getFirstChapterByCourseId
-// getFirstTopicByCourseId

@@ -3,8 +3,8 @@
 <html>
 
 <head>
-    <title>student log in</title>
-    <link rel="stylesheet" href="bootstrap.css" />
+<title>StartupCompanion | Navigate your startup journey</title>
+<link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 

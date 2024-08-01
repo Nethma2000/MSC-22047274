@@ -14,9 +14,7 @@ class Util{
 
 <?php 
 session_start();
-// include "../../Utils/Util.php";
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
+
    
 
     include "Utils/Validation.php";
@@ -33,13 +31,13 @@ session_start();
 
     if(empty($topic_title)) {
         $em = "Invalid Title";
-        Util::redirect("../Courses-add.php", "error", $em);
+        Util::redirect("Courses-add.php", "error", $em);
     }else if (empty($course_id)) {
         $em = "Invalid course";
-        Util::redirect("../Courses-add.php", "error", $em);
+        Util::redirect("Courses-add.php", "error", $em);
     }else if (empty($chapter_id)) {
         $em = "Invalid  chapter";
-        Util::redirect("../Courses-add.php", "error", $em);
+        Util::redirect("Courses-add.php", "error", $em);
     }else {
 
        $db = new Database();
@@ -61,7 +59,3 @@ session_start();
         $em = "REQUEST Error";
         Util::redirect("../Courses-add.php", "error", $em);
     }
-// }else {
-//     $em = "First login ";
-//     Util::redirect("../../login.php", "error", $em);
-// }

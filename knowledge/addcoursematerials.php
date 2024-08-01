@@ -1,28 +1,20 @@
 <?php 
 session_start();
 include "Utils/Validation.php";
-// if (isset($_SESSION['username']) &&
-    // isset($_SESSION['instructor_id'])) {
 
-
-  $title = "EduPulse - Upload Courses Materials ";
-  include "adheader2.php";
-
+$title = "StartupCompanion | Navigate your startup journey";
+include "adheader2.php";
 ?>
 
 <?php  
-
 class Util{
-	static function redirect($location, $type, $em, $data=""){
-	    header("Location: $location?$type=$em&$data");
-	    exit;
-	}
-
-
+    static function redirect($location, $type, $em, $data=""){
+        header("Location: $location?$type=$em&$data");
+        exit;
+    }
 }
 ?>
 <div class="container">
-  <!-- NavBar -->
   
   <div class="list-table pt-5">
   <h4>Upload Courses Materials <a href="coursematerials.php" class="btn btn-primary">All Materials</a></h4>
@@ -52,5 +44,3 @@ class Util{
     </form>
   </div>
 </div>
- <!-- Footer -->
-

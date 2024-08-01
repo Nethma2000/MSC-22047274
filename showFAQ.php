@@ -14,8 +14,8 @@
 <html lang="en">
 
 
-  <title>StartupCompanion</title>
-  <link href="assets/img/logo1.jpg" rel="icon" style="width: 150px; height: 130px;">
+<title>StartupCompanion | Navigate your startup journey</title>
+<link href="assets/img/logo1.jpg" rel="icon" style="width: 150px; height: 130px;">
 
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -253,7 +253,7 @@ h4 {
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>StartupCompanion</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>startupcompanion</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
       

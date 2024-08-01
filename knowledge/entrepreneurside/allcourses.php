@@ -1,5 +1,8 @@
 
-
+<style>
+ body {
+            background-color: red;
+        }</style>
 
 <?php 
     // include "../controller/Database.php";
@@ -26,20 +29,21 @@ session_start();
     if($page != 1) $offset = ($page-1) * $row_num;
     $courses = getSomeCourses($offset, $row_num);
 
-    # Header
-    $title = "EduPulse - Students ";
+    $title = "StartupCompanion | Navigate your startup journey";
     include "header.php";
 
 ?>
+
+
 <div class="container">
-  <!-- NavBar -->
+   
   <?php if ($courses) { ?>
   <h4 class="course-list-title">All Courses (<?=$row_count?>)</h4>
   <div class="course-list">
 
     <?php foreach ($courses as $course) {?>
     
-    <div class="card mb-3 course">
+    <div style="background-color:#ebf2ff	;" class="card mb-3 course">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="../Upload/thumbnail/<?=$course["cover"]?>" 
@@ -47,12 +51,12 @@ session_start();
              alt="course"
              width="500">
       </div>
-      <div class="col-md-8">
+      <div style="background-color:#ebf2ff	;" class="col-md-8">
         <div class="card-body">
           <h5 class="card-title"><?=$course["title"]?></h5>
           <p class="card-text"><?=$course["description"]?></p>
           <p class="card-text"><small class="text-body-secondary"><?=$course["created_at"]?></small></p>
-          <a href="courseview.php?course_id=<?=$course["course_id"]?>" class="btn btn-primary">View Course</a>
+          <a href="courseview.php?course_id=<?=$course["course_id"]?>" style="background-color: #00008B	;" class="btn btn-primary">View Course</a>
         </div>
       </div>
     </div>
@@ -108,5 +112,4 @@ session_start();
   <?php } ?>
 </div>
 
- <!-- Footer -->
 

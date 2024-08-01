@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartupCompanion | Navigate your startup journey</title>
+    <link href="assets/img/logo1.jpg" rel="icon" style="width: 150px; height: 130px;">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
+            overflow: hidden;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 1s ease-in-out;
+            line-height: 1.5; /* Adjust line height for consistent spacing */
+
+        }
+
+        .header {
+            background-color: #191970;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .question {
+            display: none;
+            padding: 20px;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .question.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .question label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 20px;
+        }
+        .navigation button {
+            background-color: #191970;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navigation button:hover {
+            background-color: #7DF9FF	;
+            color: #000;
+        }
+
+        .navigation button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .go-back {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #191970;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .go-back:hover {
+            background-color: #45a049;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <button class="go-back" onclick="window.location.href='entrepreneurs/entrepreneurhome.php';">
+        <i class="fas fa-arrow-left"></i> Go Back to your Dashboard
+    </button>
+    <div class="container">
+        <div class="header">
+            <h1>Find Your Suitable Startup Field</h1>
+        </div>
+        <form id="quizForm" action="process_form.php" method="POST">
+         
+      
+            <div class="question active">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">1/15</div>
+
+                <label for="q1" style="font-weight: 600;">What is your primary interest?</label>
+                <input type="radio" name="q1" value="Innovation and Technology"> Innovation and Technology<br>
+                <input type="radio" name="q1" value="Helping Others and Social Work"> Helping Others and Social Work<br>
+                <input type="radio" name="q1" value="Business and Entrepreneurship"> Business and Entrepreneurship<br>
+                <input type="radio" name="q1" value="Art and Entertainment"> Art and Entertainment<br>
+                <input type="radio" name="q1" value="Health and Wellness"> Health and Wellness<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+            
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">2/15</div>
+
+                <label for="q2" style="font-weight: 600;">What type of work environment do you prefer?</label>
+                <input type="radio" name="q2" value="Fast-paced and Dynamic"> Fast-paced and Dynamic<br>
+                <input type="radio" name="q2" value="Structured and Organized"> Structured and Organized<br>
+                <input type="radio" name="q2" value="Creative and Unconventional"> Creative and Unconventional<br>
+                <input type="radio" name="q2" value="Collaborative and Supportive"> Collaborative and Supportive<br>
+                <input type="radio" name="q2" value="Independent and Flexible"> Independent and Flexible<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+            
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">3/15</div>
+
+                <label for="q3" style="font-weight: 600;">What is your preferred method of solving problems?</label>
+                <input type="radio" name="q3" value="Analytical and Logical Thinking"> Analytical and Logical Thinking<br>
+                <input type="radio" name="q3" value="Creative and Out-of-the-box Thinking"> Creative and Out-of-the-box Thinking<br>
+                <input type="radio" name="q3" value="Practical and Hands-on Approach"> Practical and Hands-on Approach<br>
+                <input type="radio" name="q3" value="Research and Data-driven Approach"> Research and Data-driven Approach<br>
+                <input type="radio" name="q3" value="Collaborative Team Efforts"> Collaborative Team Efforts<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+            
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">4/15</div>
+
+                <label for="q4" style="font-weight: 600;">What motivates you the most about starting a business?</label>
+                <input type="radio" name="q4" value="Financial independence"> Financial independence<br>
+                <input type="radio" name="q4" value="Solving a societal problem"> Solving a societal problem<br>
+                <input type="radio" name="q4" value="Creating innovative products"> Creating innovative products<br>
+                <input type="radio" name="q4" value="Being your own boss"> Being your own boss<br>
+                <input type="radio" name="q4" value="Building a legacy"> Building a legacy<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+            
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">5/15</div>
+
+                <label for="q5" style="font-weight: 600;">What type of products or services would you like to work on?</label>
+                <input type="radio" name="q5" value="Digital Products"> Digital Products<br>
+                <input type="radio" name="q5" value="Physical Products"> Physical Products<br>
+                <input type="radio" name="q5" value="Services"> Services<br>
+                <input type="radio" name="q5" value="Community-focused"> Community-focused <br>
+                <input type="radio" name="q5" value="Educational Products"> Educational Products<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+            
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">6/15</div>
+
+                <label for="q6" style="font-weight: 600;">What type of customer interaction are you most comfortable with?</label>
+                <input type="radio" name="q6" value="Minimal direct interaction, online platforms"> Minimal direct interaction, online platforms<br>
+                <input type="radio" name="q6" value="Personal interaction, patient or client care"> Personal interactione<br>
+                <input type="radio" name="q6" value="Group interaction, workshops or classes"> Group interaction, workshops<br>
+                <input type="radio" name="q6" value="Broad audience interaction, events or media"> Broad audience interaction, events or media<br>
+                <input type="radio" name="q6" value="Interactive and engaging, customer feedback"> Interactive and engaging, customer feedback<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+            
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">7/15</div>
+
+                <label for="q7" style="font-weight: 600;">What motivates you the most in your career?</label>
+                <input type="radio" name="q7" value="Innovation and Creation"> Innovation and Creation<br>
+                <input type="radio" name="q7" value="Helping Others"> Helping Others<br>
+                <input type="radio" name="q7" value="Financial Success"> Financial Success<br>
+                <input type="radio" name="q7" value="Personal Growth and Learning"> Personal Growth and Learning<br>
+                <input type="radio" name="q7" value="Recognition and Respect"> Recognition and Respect<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+            
+        
+
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">8/15</div>
+
+                <label for="q8" style="font-weight: 600;">How do you view competition in your potential field?</label>
+                <input type="radio" name="q8" value="A driving force for innovation"> A driving force for innovation<br>
+                <input type="radio" name="q8" value="A challenge to provide better service"> A challenge to provide better service<br>
+                <input type="radio" name="q8" value="A chance to learn and adapt quickly"> A chance to learn and adapt quickly<br>
+                <input type="radio" name="q8" value="An opportunity to stand out creatively"> An opportunity to stand out creatively<br>
+                <input type="radio" name="q8" value="A way to benchmark against the best"> A way to benchmark against the best<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+
+
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">9/15</div>
+
+                <label for="q9" style="font-weight: 600;">What kind of initial investment are you comfortable with?</label>
+                <input type="radio" name="q9" value="High investment with high returns potential"> High investment with high returns potential<br>
+                <input type="radio" name="q9" value="Moderate investment with steady growth"> Moderate investment with steady growth<br>
+                <input type="radio" name="q9" value="Low investment with creative funding options"> Low investment with creative funding options<br>
+                <input type="radio" name="q9" value="Variable investment based on project needs"> Variable investment based on project needs<br>
+                <input type="radio" name="q9" value="Bootstrapped, with minimal expenses"> Bootstrapped, with minimal expenses<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+
+            <div class="question">
+                <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">10/15</div>
+
+                <label for="q10" style="font-weight: 600;">What is your long-term vision for your startup?</label>
+                <input type="radio" name="q10" value="To build a sustainable and socially responsible company"> To build a sustainable and socially responsible company<br>
+                <input type="radio" name="q10" value="To achieve consistent growth and profitability"> To achieve consistent growth and profitability<br>
+                <input type="radio" name="q10" value="To foster a strong and inclusive company culture"> To foster a strong and inclusive company culture<br>
+                <input type="radio" name="q10" value="To innovate and stay ahead of industry trends"> To innovate and stay ahead of industry trends<br>
+                <input type="radio" name="q10" value="To provide exceptional value and service to customers"> To provide exceptional value and service to customers<br>
+                <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+            </div>
+
+<div class="question">
+    <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">11/15</div>
+
+    <label for="q11" style="font-weight: 600;">How do you handle setbacks or failures?</label>
+    <input type="radio" name="q11" value="Embrace them as learning opportunities"> Embrace them as learning opportunities<br>
+    <input type="radio" name="q11" value="Get discouraged but try to overcome them"> Get discouraged but try to overcome them<br>
+    <input type="radio" name="q11" value="Seek advice and support from others"> Seek advice and support from others<br>
+    <input type="radio" name="q11" value="Avoid taking risks to prevent failures"> Avoid taking risks to prevent failures<br>
+    <input type="radio" name="q11" value="Reevaluate goals and strategies to adjust"> Reevaluate goals and strategies to adjust<br>
+    <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+</div>
+
+<div class="question">
+    <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">12/15</div>
+
+    <label for="q12" style="font-weight: 600;">What is your approach to taking risks in business?</label>
+    <input type="radio" name="q12" value="I am willing to take calculated risks"> I am willing to take calculated risks<br>
+    <input type="radio" name="q12" value="I prefer to take minimal risks"> I prefer to take minimal risks<br>
+    <input type="radio" name="q12" value="I avoid risks whenever possible"> I avoid risks whenever possible<br>
+    <input type="radio" name="q12" value="I take risks only if others are also involved"> I take risks only if others are also involved<br>
+    <input type="radio" name="q12" value="I analyze data thoroughly before deciding"> I analyze data thoroughly before deciding<br>
+    <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+</div>
+
+<div class="question">
+    <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">13/15</div>
+
+    <label for="q13" style="font-weight: 600;">How do you prioritize tasks and projects?</label>
+    <input type="radio" name="q13" value="Focus on high-impact tasks first"> Focus on high-impact tasks first<br>
+    <input type="radio" name="q13" value="Prioritize based on deadlines"> Prioritize based on deadlines<br>
+    <input type="radio" name="q13" value="Balance tasks equally without prioritizing"> Balance tasks equally without prioritizing<br>
+    <input type="radio" name="q13" value="Delegate tasks and focus on strategic decisions"> Delegate tasks and focus on strategic decisions<br>
+    <input type="radio" name="q13" value="Use a time management system to organize tasks"> Use a time management system to organize tasks<br>
+    <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+</div>
+
+
+
+
+<div class="question">
+    <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">14/15</div>
+
+    <label for="q14" style="font-weight: 600;">Which lifestyle best describes your ideal work-life balance?</label>
+    <input type="radio" name="q14" value="High-paced and demanding, with long hours"> High-paced and demanding, with long hours<br>
+    <input type="radio" name="q14" value="Balanced, with a mix of work and personal time"> Balanced, with a mix of work and personal time<br>
+    <input type="radio" name="q14" value="Flexible, with the ability to work from anywhere"> Flexible, with the ability to work from anywhere<br>
+    <input type="radio" name="q14" value="Relaxed, with a focus on personal well-being"> Relaxed, with a focus on personal well-being<br>
+    <input type="radio" name="q14" value="Structured, with clear boundaries between work and personal life"> Structured, with clear boundaries between work and personal life<br>
+    <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+</div>
+
+
+<div class="question">
+    <div style="color: #008080;margin-left: 500px;font-weight: 600;" class="question-number">15/15</div>
+
+    <label for="q15" style="font-weight: 600;">How do you feel about taking risks in your career or business ventures?</label>
+    <input type="radio" name="q15" value="I thrive on high-risk, high-reward opportunities"> I thrive on high-risk, high-reward opportunities<br>
+    <input type="radio" name="q15" value="I am open to taking calculated risks"> I am open to taking calculated risks<br>
+    <input type="radio" name="q15" value="I prefer a moderate level of risk with some stability"> I prefer a moderate level of risk with some stability<br>
+    <input type="radio" name="q15" value="I lean towards low-risk, steady growth options"> I lean towards low-risk, steady growth options<br>
+    <input type="radio" name="q15" value="I avoid risks and prioritize security and predictability"> I avoid risks and prioritize security and predictability<br>
+    <br><div id="error-message" style="color: red; display: none;font-size: small;">*This question is required.</div>
+
+</div>
+
+            <div class="navigation">
+                <button type="button" id="prevBtn" onclick="prevQuestion()">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextQuestion()">Next</button>
+                <!-- <input type="submit" id="submitBtn" value="Submit" style="display: none;"> -->
+                <input type="submit" id="submitBtn" value="Submit" style="display: inline-block; height: 50px; width: 102.25px; background-color: #191970; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let currentQuestion = 0;
+        const questions = document.querySelectorAll('.question');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+    
+        function showQuestion(index) {
+            questions.forEach((question, i) => {
+                question.classList.remove('active');
+                if (i === index) {
+                    question.classList.add('active');
+                }
+            });
+            if (index === 0) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'inline-block';
+            }
+            if (index === questions.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'inline-block';
+            } else {
+                nextBtn.style.display = 'inline-block';
+                submitBtn.style.display = 'none';
+            }
+        }
+    
+        function nextQuestion() {
+            // Check if the current question is answered
+            const currentQuestionElement = questions[currentQuestion];
+            const inputs = currentQuestionElement.querySelectorAll('input[type="radio"]');
+            const isChecked = Array.from(inputs).some(input => input.checked);
+    
+            if (isChecked) {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    showQuestion(currentQuestion);
+                }
+            } else {
+                // Show a required message if the question is not answered
+                const errorMessage = currentQuestionElement.querySelector('#error-message');
+                if (errorMessage) {
+                    errorMessage.style.display = 'block';
+                }
+            }
+        }
+    
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        }
+    
+        // Initialize
+        showQuestion(currentQuestion);
+    </script>
+    

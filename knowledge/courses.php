@@ -2,15 +2,14 @@
 <?php
 include('../admins/adminsession.php');
 ?>
- <!-- ======= Header ======= -->
 
- <!-- <link href="../admins/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+<title>StartupCompanion | Navigate your startup journey</title>
+  <link href="../assets/img/logo1.jpg" rel="icon" style="width: 150px; height: 130px;">
+
+
   <link href="../admins/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <!-- <link href="../admins/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"> -->
-  <!-- <link href="../admins/assets/vendor/quill/quill.snow.css" rel="stylesheet"> -->
-  <!-- <link href="../admins/assets/vendor/quill/quill.bubble.css" rel="stylesheet"> -->
-  <!-- <link href="../admins/assets/vendor/remixicon/remixicon.css" rel="stylesheet"> -->
-  <!-- <link href="../admins/assets/vendor/simple-datatables/style.css" rel="stylesheet"> -->
+ 
  <link href="../admins/assets/css/style.css" rel="stylesheet">
 
  <header id="header" class="header fixed-top d-flex align-items-center">
@@ -32,7 +31,7 @@ include('../admins/adminsession.php');
       <a class="nav-link nav-icon search-bar-toggle " href="#">
         <i class="bi bi-search"></i>
       </a>
-    </li><!-- End Search Icon-->
+    </li>
 
   
 
@@ -41,8 +40,7 @@ include('../admins/adminsession.php');
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
         <img src="../assets/img/userimg.png" alt="Profile" class="rounded-circle">
         <span class="d-none d-md-block dropdown-toggle ps-2">Welcome <?php echo $loggedin_session; ?></span>
-      </a><!-- End Profile Iamge Icon -->
-
+      </a>
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
           <h6><?php echo $loggedin_session; ?></span>
@@ -90,15 +88,13 @@ include('../admins/adminsession.php');
           </a>
         </li>
 
-      </ul><!-- End Profile Dropdown Items -->
-    </li><!-- End Profile Nav -->
+      </ul>
+    </li>
 
   </ul>
-</nav><!-- End Icons Navigation -->
+</nav>
+</header>
 
-</header><!-- End Header -->
-
-<!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
 
 <ul class="sidebar-nav" id="sidebar-nav">
@@ -108,11 +104,12 @@ include('../admins/adminsession.php');
       <i class="bi bi-grid"></i>
       <span>Dashboard</span>
     </a>
-  </li><!-- End Dashboard Nav -->
-  
+  </li>
+
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-gem"></i><span>Manage Blog</span><i class="bi bi-chevron-down ms-auto"></i>
+    <i class="bi bi-journals"></i>
+    </i><span>Manage Blog</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
@@ -122,16 +119,17 @@ include('../admins/adminsession.php');
       </li>
       <li>
         <a href="blog/admin/index.php?page=category">
-          <i class="bi bi-circle"></i><span>Blog Catories</span>
+          <i class="bi bi-circle"></i><span>Blog Categories</span>
         </a>
       </li>
-     
+
     </ul>
-  </li><!-- End Icons Nav -->
+  </li>
 
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-gem"></i><span>Learning Management</span><i class="bi bi-chevron-down ms-auto"></i>
+    <i class="bi bi-book"></i>
+  </i><span>Learning Management</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
@@ -150,12 +148,12 @@ include('../admins/adminsession.php');
         </a>
       </li>
       <li>
-        <a href="../knowledge/Courses-add.php#Chapter">
+        <a href="../knowledge/createcourses.php#Chapter">
           <i class="bi bi-circle"></i><span>Create New Chapters</span>
         </a>
       </li>
       <li>
-        <a href="../knowledge/Courses-add.php#Topic">
+        <a href="../knowledge/createcourses.php#Topic">
           <i class="bi bi-circle"></i><span>Create New Topics</span>
         </a>
       </li>
@@ -170,15 +168,14 @@ include('../admins/adminsession.php');
           <i class="bi bi-circle"></i><span>Course materials</span> -->
         </a>
       </li>
-     
+
     </ul>
-  </li><!-- End Icons Nav -->
+  </li>
 
   <li class="nav-item">
 
     <a class="nav-link collapsed" href="../advisors/advisorscrud/index.php">
-      <i class="bi bi-person"></i>
-      <span>Advisors Section</span>
+    <i class="bi bi-person-plus"></i>          <span>Advisors Section</span>
     </a>
 
     <a class="nav-link collapsed" href="../owners/advisorscrud/index.php">
@@ -187,31 +184,29 @@ include('../admins/adminsession.php');
     </a>
 
 
+    <a class="nav-link collapsed" href="../tips/admin-files-upload.php">
+    <i class="bi bi-card-text"></i>    
+    <span>Success Tips File Approval</span>
+    </a>
 
     <a class="nav-link collapsed" href="inquiries.php">
-      <i class="bi bi-person"></i>
-      <span>Inquiries</span>
+    <i class="bi bi-envelope"></i>
+           <span>Inquiries</span>
     </a>
     <!-- <a class="nav-link collapsed" href="../advisors/advisorscrud/index.php">
       <i class="bi bi-person"></i>
       <span>Advisors</span>
     </a> -->
-  </li><!-- End Profile Page Nav -->
-
+  </li>
   <li class="nav-item">
     <a class="nav-link collapsed" href="faq/addfaq.php">
       <i class="bi bi-question-circle"></i>
       <span>F.A.Q</span>
     </a>
-  </li><!-- End F.A.Q Page Nav -->
-
-
-
-
+  </li>
 </ul>
 
-</aside><!-- End Sidebar-->
-
+</aside>
 
 <?php 
 session_start();
@@ -235,13 +230,11 @@ include "Utils/Util.php";
     if($page != 1) $offset = ($page-1) * $row_num;
     $courses = getSomeCourses($offset, $row_num);
     # Header
-    $title = "EduPulse - Courses ";
     include "adheader.php";
 
 ?>
 
 <div class="container" style="margin-left: 300px;">
-  <!-- NavBar -->
   
   <div class="list-table pt-5">
   <?php if ($courses) { ?>
@@ -251,13 +244,14 @@ include "Utils/Util.php";
       <tr>
         <th>#Id</th>
         <th>Full name</th>
-        <!-- <th>Status</th>
-        <th>Action</th> -->
+     
       </tr>
       <?php foreach ($courses as $course) {?>
       <tr>
       <td><?=$course["course_id"]?></td>
-      <td><a href="entrepreneurside/courseview.php?course_id=<?=$course["course_id"]?>"><?=$course["title"]?></a></td>
+      <!-- <td><a href="entrepreneurside/courseview.php?course_id=<?=$course["course_id"]?>"><?=$course["title"]?></a></td> -->
+      <td><?=$course["title"]?></a></td>
+
        <!-- <td class="status"> <?=$course["status"]?></td> -->
        <!-- <td class="action_btn">
         <?php  
@@ -269,6 +263,7 @@ include "Utils/Util.php";
        </td> -->
       </tr>
       <?php } ?>
+      
   </table>
   <?php if ($last_page > 1 ) { ?>
   <div class="d-flex justify-content-center mt-3 border">
@@ -323,8 +318,7 @@ include "Utils/Util.php";
 
 
 </div>
- <!-- Footer -->
-<!-- <?php include "inc/Footer.php"; ?> -->
+
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
   var valu= "";
@@ -357,7 +351,6 @@ include "Utils/Util.php";
   }
 </script>
 
- <!-- Vendor JS Files -->
  <script src="../admins/assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../admins/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../admins/assets/vendor/chart.js/chart.umd.js"></script>
@@ -367,6 +360,5 @@ include "Utils/Util.php";
   <script src="../admins/assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../admins/assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="../admins/assets/js/main.js"></script>
 

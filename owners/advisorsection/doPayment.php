@@ -6,8 +6,8 @@ require_once 'config.php';
 <html>
 
 <head>
-    <title>Do payment</title>
-    <link rel="stylesheet" href="bootstrap.css" />
+<title>StartupCompanion | Navigate your startup journey</title>
+<link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>

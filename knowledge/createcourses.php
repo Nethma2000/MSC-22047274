@@ -1,55 +1,46 @@
 <?php  
-
 class Util{
-	static function redirect($location, $type, $em, $data=""){
-	    header("Location: $location?$type=$em&$data");
-	    exit;
-	}
-
-
+    static function redirect($location, $type, $em, $data=""){
+        header("Location: $location?$type=$em&$data");
+        exit;
+    }
 }
 ?>
 
 <?php
-// Example database connection using PDO
-$pdo = new PDO('mysql:host=localhost;dbname=EduPulseDB', 'root', '');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=startupcompanion', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Query to fetch courses
-$query = "SELECT course_id, title FROM course";
-$stmt = $pdo->query($query);
-$courses = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all courses as associative array
-
+    $query = "SELECT course_id, title FROM course";
+    $stmt = $pdo->query($query);
+    $courses = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+} catch (PDOException $e) {
+    echo "Database error: " . $e->getMessage();
+    $courses = [];
+}
 ?>
-
 
 <?php 
 session_start();
 include "Utils/Validation.php";
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
-    include "controller/coursemodel.php";
-    // $instructor_id = $_SESSION['instructor_id'];
-    // $courses = getCoursesByInstructorId($instructor_id);
+include "controller/coursemodel.php";
 
-    # Header
-    $title = "EduPulse - Create Course ";
-    include "adheader2.php";
+$instructor_id = 1; 
 
-    
-    $title = $description  ="";
-    if (isset($_GET["title"])) {
-        $title = Validation::clean($_GET["title"]);
-    }
-    if (isset($_GET["description"])) {
-        $description = Validation::clean($_GET["description"]);
-    }
+$title = "StartupCompanion | Navigate your startup journey";
+include "adheader2.php";
+
+$title = $description = "";
+if (isset($_GET["title"])) {
+    $title = Validation::clean($_GET["title"]);
+}
+if (isset($_GET["description"])) {
+    $description = Validation::clean($_GET["description"]);
+}
 ?>
 
-
-
 <div class="container">
-    <!-- Form for creating a course -->
     <div class="mt-5" style="max-width: 800px;">
     <form id="courseForm" 
           class="mt-5"
@@ -64,7 +55,7 @@ include "Utils/Validation.php";
         <p class="alert alert-success"><?=Validation::clean($_GET['success'])?></p>
         <?php } ?>
         <h2>Create a New Course</h2>
-        <div class="mb-3" >
+        <div class="mb-3">
             <label for="courseTitle" class="form-label">Course Title</label>
             <input type="text" 
                    class="form-control" 
@@ -81,12 +72,12 @@ include "Utils/Validation.php";
                       rows="4" 
                       name="description" 
                       placeholder="Enter course description" 
-                      required ><?=$description?></textarea>
+                      required><?=$description?></textarea>
         </div>
         <div class="mb-3">
             <label for="Cover" class="form-label">Cover Image</label>
             <input type="file" class="form-control" 
-                   id="Cover" placeholder="Enter course title" 
+                   id="Cover" 
                    name="cover" />
         </div>
 
@@ -95,7 +86,6 @@ include "Utils/Validation.php";
 
     <hr>
 
-    <!-- Form for creating chapters linked to a specific course -->
     <form id="Chapter" 
           class="mt-5"
           action="course-chapter-add.php"
@@ -104,13 +94,16 @@ include "Utils/Validation.php";
         <div class="mb-3">
             <label for="courseSelect" class="form-label">Select Course</label>
             <select class="form-select" id="courseSelect" name="course_id" required>
-                <?php if ($courses) { ?>
+                <?php if (!empty($courses)) { ?>
                     <?php foreach ($courses as $course) { ?>
-                        <option value="<?=$course['course_id']?>"><?=$course['title']?></option>
-                    <?php }?>
+                        <option value="<?= htmlspecialchars($course['course_id']) ?>"><?= htmlspecialchars($course['title']) ?></option>
+                    <?php } ?>
+                <?php } else { ?>
+                    <option value="">No courses available</option>
                 <?php } ?>
             </select>
         </div>
+        
         <div class="mb-3">
             <label for="chapterTitle" class="form-label">Chapter Title</label>
             <input type="text" 
@@ -120,11 +113,11 @@ include "Utils/Validation.php";
                    name="chapter_title" 
                    required>
         </div>
+    
         <button type="submit" class="btn btn-primary">Create Chapter</button>
     </form>
 
     <hr>
-
 
     <form id="Topic" 
           class="mt-5"
@@ -134,10 +127,12 @@ include "Utils/Validation.php";
         <div class="mb-3">
             <label for="courseSelectTopic" class="form-label">Select Course</label>
             <select class="form-select" id="courseSelectTopic" name="course_id" required>
-               <?php if ($courses) { ?>
+               <?php if (!empty($courses)) { ?>
                     <?php foreach ($courses as $course) { ?>
-                        <option value="<?=$course['course_id']?>"><?=$course['title']?></option>
-                    <?php }?>
+                        <option value="<?= htmlspecialchars($course['course_id']) ?>"><?= htmlspecialchars($course['title']) ?></option>
+                    <?php } ?>
+                <?php } else { ?>
+                    <option value="">No courses available</option>
                 <?php } ?>
             </select>
         </div>
@@ -147,11 +142,8 @@ include "Utils/Validation.php";
                     id="chapterSelect" 
                     name="chapter_id" 
                     required>
-
                  
             </select>
-
-            
         </div>
         <div class="mb-3">
             <label for="topicTitle" class="form-label">Topic Title</label>
@@ -167,8 +159,6 @@ include "Utils/Validation.php";
    </div>
 </div>
 
-
-</div>
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
     $("#courseSelectTopic").change(function(){
@@ -189,10 +179,3 @@ include "Utils/Validation.php";
     });
 </script>
 
- 
-
-<?php
-//  }else { 
-// $em = "First login ";
-// Util::redirect("../login.php", "error", $em);
-// } ?>

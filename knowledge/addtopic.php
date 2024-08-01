@@ -13,8 +13,7 @@ class Util{
 
 <?php 
 session_start();
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
+
     include "Utils/Validation.php";
     include "controller/Database.php";
     include "controller/coursemodel.php";
@@ -57,7 +56,3 @@ session_start();
         $em = "REQUEST Error";
         Util::redirect("Courses-add.php", "error", $em);
     }
-// }else {
-//     $em = "First login ";
-//     Util::redirect("../../login.php", "error", $em);
-// }

@@ -4,8 +4,7 @@
 
 <div class="container-fluid mt-2 mb-2">
   <div class="d-flex align-items-center justify-content-between">	  		
-  <a href="adminhome.php" class="logo d-flex align-items-center">
-        <img src="../../assets/img/logo.png" alt="">
+  <a href="../../adminhome.php" class="logo d-flex align-items-center">
         <span class="d-none d-lg-block">Admin Dashboard</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>

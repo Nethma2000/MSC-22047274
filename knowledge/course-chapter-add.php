@@ -1,10 +1,8 @@
 <?php 
 session_start();
 include "Utils/Util.php";
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
+
     include "Utils/Validation.php";
-    // include "controller/Database.php";
     include "controller/course.php";
 
    if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -41,7 +39,3 @@ include "Utils/Util.php";
         $em = "REQUEST Error";
         Util::redirect("Courses-add.php", "error", $em);
     }
-// }else {
-//     $em = "First login ";
-//     Util::redirect("../../login.php", "error", $em);
-// }

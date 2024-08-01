@@ -4,32 +4,23 @@
 
 	if(isset($_POST['edit'])){
 		$id = $_POST['id_advisor'];
-		$name = $_POST['name'];
-		$company = $_POST['company'];
-		$designation = $_POST['designation'];
-		$field = $_POST['field'];
-		$mobileno = $_POST['mobileno'];
-		$email = $_POST['email'];
-		$medium = $_POST['medium'];
-		$linkedin = $_POST['linkedin'];
-		$github = $_POST['github'];
-		$qualifications = $_POST['qualifications'];
-		$work_experience = $_POST['work_experience'];
-		$active = $_POST['active'];
-		$sql = "UPDATE advisor SET name = '$name', company = '$company', designation = '$designation', field = '$field', mobileno = '$mobileno', email = '$email', medium = '$medium', linkedin = '$linkedin', github = '$github', qualifications = '$qualifications', work_experience = '$work_experience', active = '$active'
-		 WHERE id_advisor = '$id'";
+		$name = $_POST['advisor_name'];
+		$company = $_POST['advisor_company'];
+		$designation = $_POST['advisor_designation'];
+		$field = $_POST['advisor_field'];
+		$comp = $_POST['advisor_advisingcomponent'];
+		$work_experience = $_POST['advisor_noofexperience'];
+		$email = $_POST['advisor_email'];
+		$mobile = $_POST['advisor_mobile'];
+		$linkedin = $_POST['advisor_linkedin'];
+		$qualifications = $_POST['advisor_qualifications'];
+		
+		$sql = "UPDATE advisor SET advisor_name = '$name', advisor_company = '$company', advisor_designation = '$designation', advisor_field = '$field',  advisor_advisingcomponent = '$comp', advisor_noofexperience = '$work_experience', advisor_email = '$email', advisor_mobile = '$mobile',advisor_linkedin = '$linkedin', advisor_qualifications = '$qualifications' WHERE id_advisor = '$id'";
 
-		//use for MySQLi OOP
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Member updated successfully';
 		}
-		///////////////
-
-		//use for MySQLi Procedural
-		// if(mysqli_query($conn, $sql)){
-		// 	$_SESSION['success'] = 'Member updated successfully';
-		// }
-		///////////////
+	
 		
 		else{
 			$_SESSION['error'] = 'Something went wrong in updating member';

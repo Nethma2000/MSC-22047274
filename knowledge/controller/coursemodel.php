@@ -1,5 +1,6 @@
 <?php 
 
+
 class Course {
    private $table_name;
    private $conn;
@@ -163,21 +164,41 @@ class Course {
       return $data;
    }
 
-   function getChapters($cour_id){
-     try {
-          $sql = 'SELECT * FROM chapter WHERE course_id=?';
-          $stmt = $this->conn->prepare($sql);
-          $res = $stmt->execute([$cour_id]);
-          if($stmt->rowCount() > 0) 
-            {
-                $chapters = $stmt->fetchAll();
-                return $chapters;
-            }
-          else return 0;
-       }catch(PDOException $e){
-          return 0;
-       }
-   }
+//    function getChapters($cour_id, $instructor_id) {
+//       try {
+//           $sql = 'SELECT * FROM chapter WHERE course_id = 1 AND instructor_id = 1';
+//           $stmt = $this->conn->prepare($sql);
+//           $stmt->bindParam(':course_id', $cour_id, PDO::PARAM_INT);
+//           $stmt->bindParam(':instructor_id', $instructor_id, PDO::PARAM_INT);
+//           $stmt->execute();
+          
+//           if ($stmt->rowCount() > 0) {
+//               return $stmt->fetchAll(PDO::FETCH_ASSOC);
+//           } else {
+//               return [];
+//           }
+//       } catch (PDOException $e) {
+//           // Log error message
+//           error_log($e->getMessage());
+//           return [];
+//       }
+//   }
+
+function getChapters($cour_id){
+   try {
+        $sql = 'SELECT * FROM chapter WHERE course_id=?';
+        $stmt = $this->conn->prepare($sql);
+        $res = $stmt->execute([$cour_id]);
+        if($stmt->rowCount() > 0) 
+          {
+              $chapters = $stmt->fetchAll();
+              return $chapters;
+          }
+        else return 0;
+     }catch(PDOException $e){
+        return 0;
+     }
+ }
    function getTopics($cour_id){
      try {
           $sql = 'SELECT * FROM topic WHERE course_id=?';
@@ -291,7 +312,7 @@ class Course {
                 $stmt->execute([$instr_id]);
                 $instructor = $stmt->fetch();
 
-                $course["instructor_name"] = $instructor["first_name"]." ".$instructor["last_name"];
+               //  $course["instructor_name"] = $instructor["first_name"]." ".$instructor["last_name"];
 
                 // get all chapters
                 $sql = 'SELECT * FROM chapter WHERE course_id=?';
@@ -402,7 +423,7 @@ class Course {
    }
     function insert_topic($data){
        try {
-          $sql = 'INSERT INTO topic ( chapter_id, course_id, title) VALUES(?,?,?)';
+          $sql = 'INSERT INTO topic (chapter_id, course_id, title) VALUES(?,?,?)';
           $stmt = $this->conn->prepare($sql);
           $res = $stmt->execute($data);
           return $res;

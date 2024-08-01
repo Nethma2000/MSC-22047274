@@ -1,11 +1,9 @@
 <?php 
 session_start();
-// include "/Utils/Util.php";
 include "Utils/Validation.php";
 include "controller/Database.php";
 
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
+
 
 
   $title = "EduPulse - Upload Courses Materials ";
@@ -13,7 +11,6 @@ include "controller/Database.php";
 
 ?>
 <div class="container">
-  <!-- NavBar -->
   <!-- <?php include "inc/NavBar.php"; ?> -->
   
   <div class="list-table pt-5">
@@ -44,5 +41,4 @@ include "controller/Database.php";
     </form>
   </div>
 </div>
- <!-- Footer -->
 

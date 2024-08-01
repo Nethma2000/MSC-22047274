@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Entrepreneur Dashboard</title>
+  <title>StartupCompanion | Navigate your startup journey</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,119 +31,105 @@
 
 
   
+  <?php
+  include ('../../entrepreneurs/entreprenursession.php');
+
+  require_once ("../../entrepreneurs/econfig.php");
+
+  ?>
  
 </head>
 
 <body>
 	
 
-  <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center" style="top: 0; width: 100%; z-index: 1000; margin-bottom: 0;">
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="../../admins/assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Entrepreneur Dashboard</span>
+  <div class="d-flex align-items-center justify-content-between">
+      <a href="../../entrepreneurs/entrepreneurhome.php" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block" style="white-space: nowrap;">&nbsp&nbspEntrepreneur Dashboard</span>
       </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+      <i class="bi bi-list toggle-sidebar-btn" style="margin-left: 40px;"></i>
+    </div>
 
 	
 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+   
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
-
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
-
-        
-        </li><!-- End Notification Nav -->
-
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-
-          
-        </li><!-- End Messages Nav -->
+     
 
         <li class="nav-item dropdown pe-3">
 
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
-          </a><!-- End Profile Iamge Icon -->
+        
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+<?php
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+$sql = "SELECT * FROM entrepreneurs WHERE id_user='$loggedin_userid'";
+$result = $conn->query($sql);
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="../index.html">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
+    if ($row['prof_img'] != "") { ?>
+      <img src="../../entrepreneurs/uploads/logo/<?php echo $row['prof_img']; ?>" class="img-responsive">
+    <?php } else { ?>
+      <img src="../../images/defaultimage.png" class="img-responsive">
+    <?php } ?>
+    <span class="d-none d-md-block dropdown-toggle ps-2">Welcome <?php echo $loggedin_session; ?></span>
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+      <li class="dropdown-header">
+        <h6><?php echo $loggedin_session; ?></h6>
+      </li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
 
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
+      <li>
+        <a class="dropdown-item d-flex align-items-center" href="../../entrepreneurs/users-profile.php">
+          <i class="bi bi-person"></i>
+          <span>My Profile</span>
+        </a>
+      </li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
 
-      </ul>
-    </nav><!-- End Icons Navigation -->
+      <li>
+        <a class="dropdown-item d-flex align-items-center" href="../../entrepreneurs/users-profile.php">
+          <i class="bi bi-gear"></i>
+          <span>Account Settings</span>
+        </a>
+      </li>
+      <li>
+        <hr class="dropdown-divider">
+
+      </li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+
+      <li>
+        <a class="dropdown-item d-flex align-items-center" href="../../logout.php">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Sign Out</span>
+        </a>
+      </li>
+
+    </ul>
+</li>
+<?php
+
+  }
+}
+?>
+</ul>
+</nav>
+
 
   </header><!-- End Header -->
  
@@ -154,105 +140,142 @@
  
  
  
- <!-- ======= Sidebar ======= -->
- <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
 
-<ul class="sidebar-nav" id="sidebar-nav">
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-  <li class="nav-item">
-	<a class="nav-link collapsed" href="../../entrepreneurs/entrepreneurhome.php">
-	  <i class="bi bi-grid"></i>
-	  <span>Dashboard</span>
-	</a>
-  </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../../entrepreneurs/entrepreneurhome.php">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
 
-  <li class="nav-item">
-	<a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
-	  <i class="bi bi-menu-button-wide"></i><span>Forum</span></i>
-	</a>
-   
-	<li class="nav-item">
-	<a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
-	  <i class="bi bi-menu-button-wide"></i><span>Learning</span></i>
-	</a>
-
-	<li class="nav-item">
-	<a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
-	  <i class="bi bi-menu-button-wide"></i><span>Idea Validation portal</span></i>
-	</a>
-
-	
-	<li class="nav-item">
-	<a class="nav-link collapsed" data-bs-target="#components-nav"  href="#">
-	  <i class="bi bi-menu-button-wide"></i><span>Prediction</span></i>
-	</a>
-
-	<li class="nav-item">
-	<a class="nav-link" data-bs-target="#components-nav"  href="http://localhost/startupcompanion/admins/blog/">
-	  <i class="bi bi-menu-button-wide"></i><span>Blog</span></i>
-	</a>
-
-
-  <!-- End Components Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" href="../../forum/forum-home.php">
+        <i class="bi bi-chat-square-text"></i>
+        </i><span>Forum</span></i>
+        </a>
 
 
 
-  <li class="nav-item">
-	<a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-	  <i class="bi bi-gem"></i><span>Meetings</span><i class="bi bi-chevron-down ms-auto"></i>
-	</a>
-	<ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-	  <li>
-		<a href="icons-bootstrap.html">
-		  <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-		</a>
-	  </li>
-	  <li>
-		<a href="icons-remix.html">
-		  <i class="bi bi-circle"></i><span>Remix Icons</span>
-		</a>
-	  </li>
-	  <li>
-		<a href="icons-boxicons.html">
-		  <i class="bi bi-circle"></i><span>Boxicons</span>
-		</a>
-	  </li>
-	</ul>
-  </li><!-- End Icons Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-book"></i>
+        <span>Learning</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../../knowledge/entrepreneurside/allcourses.php">
+              <i class="bi bi-circle"></i><span>All Courses</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../knowledge/entrepreneurside/mycourses.php">
+              <i class="bi bi-circle"></i><span>Enrolled Courses</span>
+            </a>
+          </li>
+          <li>
+            <!-- <a href="../knowledge/entrepreneurside/courseenrolled.php"> -->
+              <a href="../../knowledge/coursematerials.php">
+              <i class="bi bi-circle"></i><span>Extra Reference Materials</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#compo-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-trophy"></i><span>Idea Validation</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="compo-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../../ideaportal/advisorselection.php">
+              <i class="bi bi-circle"></i><span>Advisors</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../ideaportal/user/index.php">
+              <i class="bi bi-circle"></i><span>My Valiation Requests Sent</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../ideaportal/user/mailbox.php">
+              <i class="bi bi-circle"></i><span>Mailbox</span>
+            </a>
+          </li>
+
+        </ul>
+      </li>
 
 
-  <li class="nav-item">
 
-	<a class="nav-link collapsed" href="../uni-company-chat/login.php">
-	  <i class="bi bi-person"></i>
-	  <span>Live Chat</span>
-	</a>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" href="#">
+        <i class="bi bi-gem"></i><span>Prediction</span></i>
+        </a>
 
-	<!-- <a class="nav-link collapsed" href="#">
-	  <i class="bi bi-person"></i>
-	  <span>Link 2</span>
-	</a> -->
+        
 
-	<!-- <a class="nav-link collapsed" href="../advisors/advisorscrud/index.php">
-	  <i class="bi bi-person"></i>
-	  <span>Advisors</span>
-	</a> -->
-  </li><!-- End Profile Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link" data-bs-target="#components-nav" href="#">
+        <i class="bi bi-journals"></i><span>Blog</span></i>
+        </a>
 
- 
+        <li class="nav-item">
+
+        <a class="nav-link collapsed" href="../../events/index.php">
+        <i class="bi bi-calendar-event"></i>
+        <span>Events</span>
+        </a>
 
 
-</ul>
 
-</aside><!-- End Sidebar-->
- 
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-calendar2-plus"></i>
+                <span>Meetings</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="icons-bootstrap.html">
+              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-remix.html">
+              <i class="bi bi-circle"></i><span>Remix Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-boxicons.html">
+              <i class="bi bi-circle"></i><span>Boxicons</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+
+
+      <li class="nav-item">
+
+        <a class="nav-link collapsed" href="../../chat/login.php">
+        <i class="bi bi-chat-dots"></i>         
+          <span>Live Chat</span>
+        </a>
+
+      </li>
+
+    </ul>
+
+  </aside>
+
  
 <div class="pagetitle">
       <h1>Blog Post</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../../entrepreneurs/entrepreneurhome.php">Dashboard</a></li>
-		  <li class="breadcrumb-item"><a href="http://localhost/startupcompanion/admins/blog/">Blog</a></li>
+		  <li class="breadcrumb-item"><a href="#">Blog</a></li>
 
           <li class="breadcrumb-item active">Blog Post</li>
         </ol>

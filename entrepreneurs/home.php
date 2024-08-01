@@ -1,15 +1,12 @@
   
  
 
-<!-- Favicons -->
 <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="../admins/blog/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -18,10 +15,8 @@
   <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../../assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="../admins/blog/assets/css/style.css" rel="stylesheet">
 
-<!-- Vendor JS Files -->
 <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../assets/vendor/chart.js/chart.umd.js"></script>
@@ -31,10 +26,8 @@
   <script src="../../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../../assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="../admins/blog/assets/js/main.js"></script>
 
-<!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
 
 <ul class="sidebar-nav" id="sidebar-nav">
@@ -44,7 +37,7 @@
   <i class="bi bi-grid"></i>
 	  <span>Dashboard</span>
 	</a>
-  </li><!-- End Dashboard Nav -->
+  </li>
   
   <li class="nav-item">
 	<a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
@@ -63,7 +56,7 @@
 	  </li>
 	  
 	</ul>
-  </li><!-- End Icons Nav -->
+  </li>
 
   <li class="nav-item">
 	<a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
@@ -86,7 +79,7 @@
 		</a>
 	  </li>
 	</ul>
-  </li><!-- End Icons Nav -->
+  </li>
 
   <li class="nav-item">
 
@@ -110,22 +103,21 @@
 	  <i class="bi bi-person"></i>
 	  <span>Advisors</span>
 	</a> -->
-  </li><!-- End Profile Page Nav -->
+  </li>
 
   <li class="nav-item">
 	<a class="nav-link collapsed" href="faq/addfaq.php">
 	  <i class="bi bi-question-circle"></i>
 	  <span>F.A.Q</span>
 	</a>
-  </li><!-- End F.A.Q Page Nav -->
+  </li>
 
 
 
 
 </ul>
 
-</aside><!-- End Sidebar-->
-
+</aside>
 
  
  

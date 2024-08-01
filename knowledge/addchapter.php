@@ -53,7 +53,3 @@ session_start();
         $em = "REQUEST Error";
         Util::redirect("Courses-add.php", "error", $em);
     }
-// }else {
-//     $em = "First login ";
-//     Util::redirect("../../login.php", "error", $em);
-// }

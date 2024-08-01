@@ -5,6 +5,7 @@ include('../entrepreneurs/entreprenursession.php');
 $id = $_POST['id'];
 $name = $loggedin_session;
 $msg = $_POST['msg'];
+
 if($name != "" && $msg != ""){
 	$sql = $conn->query("INSERT INTO forum (comment, commenter, post)
 			VALUES ('$id', '$loggedin_session', '$msg')");
@@ -16,3 +17,4 @@ else{
 $conn = null;
 
 ?>
+

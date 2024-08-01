@@ -13,8 +13,8 @@ $myemail = $_SESSION["su"]["email"];
 <html>
 
 <head>
-    <title>View all advisors</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+<title>StartupCompanion | Navigate your startup journey</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="style.css" />
 </head>

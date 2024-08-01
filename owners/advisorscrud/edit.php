@@ -19,7 +19,6 @@
 		$sql = "UPDATE owners SET name = '$name', company = '$company', designation = '$designation', field = '$field', mobileno = '$mobileno', email = '$email', medium = '$medium', linkedin = '$linkedin', github = '$github', qualifications = '$qualifications', work_experience = '$work_experience', active = '$active'
 		 WHERE id_advisor = '$id'";
 
-		//use for MySQLi OOP
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Member updated successfully';
 		}

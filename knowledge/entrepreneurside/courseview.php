@@ -17,13 +17,18 @@ include "../Utils/Validation.php";
        $em = "Invalid course id ";
         Util::redirect("Courses.php", "error", $em);
     }
-    # Header
-    $title = "EduPulse - Students ";
+    $title = "StartupCompanion | Navigate your startup journey";
     include "Header.php";
 
 ?>
-<div class="container">
-  <!-- NavBar -->
+<div class="container" style="margin-left: 450px;">
+ <?php include "navbar.php";
+
+ ?>
+
+<?php include "sidebar.php";
+
+?>
 
   <h4 class="course-list-title"></h4>
   <div class="card" style="max-width: 700px;">
@@ -38,15 +43,16 @@ include "../Utils/Validation.php";
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Lessons  :  <?=$course['topic_nums']?></li>
         <li class="list-group-item">Chapters:   <?=$course['chapter_nums']?></li>
-        <li class="list-group-item">Instructor: <?=$course['instructor_name']?></li>
+        <!-- <li class="list-group-item">Instructor: <?=$course['instructor_name']?></li> -->
         <li class="list-group-item">Created at: <mark><?=$course['created_at']?></mark></li>
-        <li class="list-group-item"><mark>Certificate After Complete The Course</mark></li>
+        <!-- <li class="list-group-item"><mark>Certificate After Complete The Course</mark></li> -->
       </ul>
     <div class="card-body">
       <?php if( $course['topic_nums'] > 0) { ?>
-        <a href="Action/Courses-Enrolled.php?course_id=<?=$course['course_id']?>" class="btn btn-success">Enroll</a> 
-     <?php } ?>
-      
+        <!-- <a href="enrolcourse.php?course_id=<?=$course['course_id']?>" class="btn btn-success">Enroll</a>  -->
+        <a href="enrolcourse.php?course_id=<?=$course['course_id']?>&id_user=<?=$loggedin_userid?>" style="background-color: #00008B	;" class="btn btn-success">Enroll</a>
+
+        <?php } ?>
     </div>
       <?php if ($course["cover"] != "default_course.jpg") { ?>
     

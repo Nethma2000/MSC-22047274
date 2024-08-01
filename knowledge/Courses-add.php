@@ -17,22 +17,14 @@ class Util{
 session_start();
 include "Utils/Validation.php";
 include "adheader2.php";
-// include "controller/Database.php";
 
 
 
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
+
     include "controller/course.php";
-    // $instructor_id = $_SESSION['instructor_id'];
-
-    // Example database connection using PDO
-   
-    
  
     
-    # Header
-    $title = "EduPulse - Create Course ";
+     $title = "Startup Companion";
     
     $title = $description  ="";
     if (isset($_GET["title"])) {
@@ -44,7 +36,6 @@ include "adheader2.php";
 ?>
 <div class="container">
  
-    <!-- Form for creating a course -->
     <div class="mt-5" style="max-width: 800px;">
     <form id="courseForm" 
           class="mt-5"
@@ -90,7 +81,7 @@ include "adheader2.php";
 
     <hr>
 
-    <!-- Form for creating chapters linked to a specific course -->
+    
     <form id="Chapter" 
           class="mt-5"
           action="addchapter.php"

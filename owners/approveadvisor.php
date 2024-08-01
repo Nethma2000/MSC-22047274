@@ -1,10 +1,6 @@
 <?php
 
 session_start();
-
-
-
-
 require_once("oconfig.php");
 
 if(isset($_GET)) {

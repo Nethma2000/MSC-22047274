@@ -1,5 +1,4 @@
 <?php 
-include "certificatemodel.php";
 include "coursemodel.php";
 
 include "Database.php";

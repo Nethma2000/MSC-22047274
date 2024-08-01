@@ -21,6 +21,7 @@
 
 
 
+
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
 
@@ -28,14 +29,15 @@
 
   <li class="nav-item">
   <a class="nav-link collapsed" href="../../adminhome.php">
-	  <i class="bi bi-grid"></i>
+  <i class="bi bi-grid"></i>
 	  <span>Dashboard</span>
 	</a>
   </li><!-- End Dashboard Nav -->
   
   <li class="nav-item">
 	<a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-	  <i class="bi bi-gem"></i><span>Manage Blog</span><i class="bi bi-chevron-down ms-auto"></i>
+	<i class="bi bi-journals"></i>
+	</i><span>Manage Blog</span><i class="bi bi-chevron-down ms-auto"></i>
 	</a>
 	<ul id="icons-nav" class="nav-content " data-bs-parent="#sidebar-nav">
 	  <li>
@@ -44,54 +46,73 @@
 		</a>
 	  </li>
 	  <li>
-		<a class= "nav-link" href="index.php?page=category">
+		<a  class= "nav-link"  href="index.php?page=category">
 		  <i class="bi bi-circle"></i><span>Blog Categories</span>
 		</a>
 	  </li>
-	 
+	  
 	</ul>
   </li><!-- End Icons Nav -->
 
   <li class="nav-item">
-	<a class="nav-link collapsed" data-bs-target="#icons-nav1" data-bs-toggle="collapse" href="#">
-	  <i class="bi bi-gem"></i><span>Learning Management</span><i class="bi bi-chevron-down ms-auto"></i>
+	<a class="nav-link collapsed" data-bs-target="#icos-nav1" data-bs-toggle="collapse" href="#">
+	<i class="bi bi-book"></i>
+	</i><span>Learning Management</span><i class="bi bi-chevron-down ms-auto"></i>
 	</a>
-	<ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-	  <li>
-		<a href="icons-bootstrap.html">
-		  <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-		</a>
-	  </li>
-	  <li>
-		<a href="icons-remix.html">
-		  <i class="bi bi-circle"></i><span>Remix Icons</span>
-		</a>
-	  </li>
-	  <li>
-		<a href="icons-boxicons.html">
-		  <i class="bi bi-circle"></i><span>Boxicons</span>
-		</a>
-	  </li>
+	<ul id="icos-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+	<li>
+            <a href="../../../knowledge/courses.php">
+              <i class="bi bi-circle"></i><span>All courses</span>
+            </a>
+          </li>
+		  <li>
+            <a href="../../../knowledge/coursematerials.php">
+              <i class="bi bi-circle"></i><span>Course materials</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../../knowledge/createcourses.php">
+              <i class="bi bi-circle"></i><span>Create New Courses</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../../knowledge/createcourses.php#Chapter">
+              <i class="bi bi-circle"></i><span>Create New Chapters</span>
+            </a>
+          </li>
+		  <a href="../../../knowledge/createcourses.php#Topic">
+              <i class="bi bi-circle"></i><span>Create New Topics</span>
+            </a>
+          </li>
+          <li>
+            <a href="../../../knowledge/addcoursecontent.php">
+              <i class="bi bi-circle"></i><span>Create Course Content</span>
+            </a>
+          </li>
+
 	</ul>
   </li><!-- End Icons Nav -->
 
   <li class="nav-item">
 
-	<a class="nav-link collapsed" href="../advisors/advisorscrud/index.php">
-	  <i class="bi bi-person"></i>
-	  <span>Advisors Section</span>
+	<a class="nav-link collapsed" href="../../../advisors/advisorscrud/index.php">
+	<i class="bi bi-person-plus"></i>  	  
+	<span>Advisors Section</span>
 	</a>
 
-	<a class="nav-link collapsed" href="../owners/advisorscrud/index.php">
+	<a class="nav-link collapsed" href="../../../owners/advisorscrud/index.php">
 	  <i class="bi bi-person"></i>
 	  <span>Owners Section</span>
 	</a>
 
+	<a class="nav-link collapsed" href="../../../tips/admin-files-upload.php">
+        <i class="bi bi-card-text"></i>    
+        <span>Success Tips File Approval</span>
+        </a>
 
-
-	<a class="nav-link collapsed" href="inquiries.php">
-	  <i class="bi bi-person"></i>
-	  <span>Inquiries</span>
+	<a class="nav-link collapsed" href="../../inquiries.php">
+	<i class="bi bi-envelope"></i>
+	<span>Inquiries</span>
 	</a>
 	<!-- <a class="nav-link collapsed" href="../advisors/advisorscrud/index.php">
 	  <i class="bi bi-person"></i>
@@ -100,8 +121,8 @@
   </li><!-- End Profile Page Nav -->
 
   <li class="nav-item">
-	<a class="nav-link collapsed" href="faq/addfaq.php">
-	  <i class="bi bi-question-circle"></i>
+  <a class="nav-link collapsed" href="../../faq/addfaq.php">
+  <i class="bi bi-question-circle"></i>
 	  <span>F.A.Q</span>
 	</a>
   </li><!-- End F.A.Q Page Nav -->
@@ -110,22 +131,9 @@
 
 
 </ul>
-<!-- Vendor JS Files -->
-<script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../../assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="../../assets/vendor/echarts/echarts.min.js"></script>
-  <script src="../../assets/vendor/quill/quill.min.js"></script>
-  <script src="../../assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="../../assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="../../assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="../../assets/js/main.js"></script>
-
 
 </aside><!-- End Sidebar-->
-  
+
 <div class="container-fluid">
 	<div class="card col-md-12">
 		<div class="card-body">

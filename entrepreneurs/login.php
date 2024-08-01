@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+// include('entreprenursession.php');
+
 require_once("econfig.php");
 $con= new mysqli('localhost','root','','startupcompanion');
 
@@ -12,7 +14,7 @@ $password=$_POST['password'];
 $s = "select * from entrepreneurs where email='$email' && password='$password'";
 $result=mysqli_query($con,$s);
 $num=mysqli_num_rows($result);
-$_SESSION["name"]=$row['name'];
+// $_SESSION["id_user"]=$row['id_user'];
 
 if($num==1){
    

@@ -2,12 +2,9 @@
 <?php 
 session_start();
 include "Utils/Util.php";
-// include "Utils/Validation.php";
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
+
     include "controller/course.php";
 
-    // $instructor_id = $_SESSION['instructor_id'];
     if (!isset($_SESSION['content'])) {
         Util::redirect("addcoursecontent", "error", "");
     }
@@ -18,7 +15,6 @@ include "Utils/Util.php";
     $topic_id = $content_array[1];
     $content_id = $content_array[0];
 
-    # Header
     $title = "EduPulse - Create Course ";
     include "adheader2.php";
     $course = getById($cou_id, $chapter_id, $topic_id);
@@ -45,7 +41,6 @@ include "Utils/Util.php";
 <div class="container">
 <div class="container mt-5">
 
-    <!-- Form for creating course content -->
     <form class="border p-5"
           action="editcontent.php"
           method="POST">
@@ -99,7 +94,3 @@ include "Utils/Util.php";
    
 </script>
 
-<!-- 
-  }else { 
- $em = "First login ";
-Util::redirect("../login.php", "error", $em); -->

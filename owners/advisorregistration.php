@@ -6,22 +6,19 @@ if (isset($_POST["email"])) {
     sleep(5);
     $query = "
  INSERT INTO owners 
- (name,company,designation,field,mobileno,email,password,medium,linkedin,github,qualifications,work_experience) VALUES 
- (:name, :company, :designation, :field, :mobileno, :email, :password,:medium, :linkedin, :github, :qualifications, :work_experience)
+ (name,company,field,mobileno,email,password,linkedin,qualifications,work_experience) VALUES 
+ (:name, :company, :field, :mobileno, :email, :password, :linkedin, :qualifications, :work_experience)
  ";
     //  $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $user_data = array(
         ':name'  => $_POST["name"],
         ':company'  => $_POST["company"],
-        ':designation'   => $_POST["designation"],
         ':field'   => $_POST["field"],
         ':mobileno'  => $_POST["mobileno"],
         ':email'   => $_POST["email"],
         //':password'   => $password_hash,
         ':password'   => $_POST["password"],
-        ':medium'   => $_POST["medium"],
         ':linkedin'   => $_POST["linkedin"],
-        ':github'   => $_POST["github"],
         ':qualifications'   => $_POST["qualifications"],
         ':work_experience'   => $_POST["work_experience"]
     );
@@ -47,7 +44,7 @@ if (isset($_POST["email"])) {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Multi Step Registration Form Using JQuery Bootstrap in PHP</title>
+    <title>StartupCompanion | Navigate your startup journey</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -66,7 +63,7 @@ if (isset($_POST["email"])) {
         .box {
             width: 500px;
             margin: 0 auto;
-            background-color: #FFC451;
+            background-color: #ADD8E6		;
 
             margin: 8% auto;
 
@@ -76,14 +73,14 @@ if (isset($_POST["email"])) {
 
 
         .active_tab1 {
-            background: linear-gradient(to right, #edb007, #b5953c);
-            color: #000;
+            background: linear-gradient(to right, #0096FF, #0047AB);
+            color: #fff;
             font-weight: 600;
         }
 
         .inactive_tab1 {
             background-color: #f5f5f5;
-            color: #b08309;
+            color: #00008B;
             font-weight: 600;
             cursor: not-allowed;
         }
@@ -133,7 +130,7 @@ if (isset($_POST["email"])) {
                             </div>
                             <br />
                             <div align="center">
-                                <button type="button" style="background:linear-gradient(to right,#edb007, #b5953c);" name="btn_login_details" id="btn_login_details" class="btn btn-info btn-lg">Next</button>
+                                <button type="button" style="background:linear-gradient(to right,#0096FF, #0047AB);" name="btn_login_details" id="btn_login_details" class="btn btn-info btn-lg">Next</button>
                             </div>
 
 
@@ -155,21 +152,21 @@ if (isset($_POST["email"])) {
                                 <input type="text" name="company" id="last_name" class="form-control" />
                                 <span id="error_last_name" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Enter designation</label>
                                 <input type="text" name="designation" id="last_name" class="form-control" />
                                 <span id="error_last_name" class="text-danger"></span>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label>Enter field</label>
                                 <input type="text" name="field" id="last_name" class="form-control" />
                                 <span id="error_last_name" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Enter age</label>
                                 <input type="text" name="mobileno" id="last_name" class="form-control" />
                                 <span id="error_last_name" class="text-danger"></span>
-                            </div>
+                            </div> -->
                             <!-- <div class="form-group">
                                 <label>Enter Company</label>
                                 <input type="text" name="company" id="last_name" class="form-control" />
@@ -193,7 +190,7 @@ if (isset($_POST["email"])) {
                         <div class="panel-body">
                             <div class="form-group">
                                 <label>Enter Mobile no</label>
-                                <input type="text" name="medium" id="mobile_no" class="form-control" />
+                                <input type="text" name="mobileno" id="mobile_no" class="form-control" />
                                 <span id="error_mobile_no" class="text-danger"></span>
                             </div>
                             <div class="form-group">
@@ -201,11 +198,11 @@ if (isset($_POST["email"])) {
                                 <input type="text" name="linkedin" id="mobile_no" class="form-control" />
                                 <span id="error_mobile_no" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>github</label>
                                 <input type="text" name="github" id="mobile_no" class="form-control" />
                                 <span id="error_mobile_no" class="text-danger"></span>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label>qualifications</label>
                                 <textarea name="qualifications" id="address" class="form-control"></textarea>

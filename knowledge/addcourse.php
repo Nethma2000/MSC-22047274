@@ -1,47 +1,41 @@
 <?php 
 
 class Util{
-	static function redirect($location, $type, $em, $data=""){
-	    header("Location: $location?$type=$em&$data");
-	    exit;
-	}
-
-
+    static function redirect($location, $type, $em, $data=""){
+        header("Location: $location?$type=$em&$data");
+        exit;
+    }
 }
 ?>
 
-
 <?php 
 session_start();
-// include "../../Utils/Util.php";
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
-    include "Utils/Validation.php";
-    include "controller/Database.php";
-    include "controller/coursemodel.php";
+include "Utils/Validation.php";
+include "controller/Database.php";
+include "controller/coursemodel.php";
 
-   if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    
+    $title = Validation::clean($_POST["title"]);
+    $description = Validation::clean($_POST["description"]);
+    $instructor_id = 1; 
+    $cover = "default_course.jpg";
 
-   $title   = Validation::clean($_POST["title"]);
-   $description = Validation::clean($_POST["description"]);
-//    $instructor_id = $_SESSION['instructor_id'];
-   $cover = "default_course.jpg";
-
-   $data = "title=".$title."&description=".$description;
+    $data = "title=".$title."&description=".$description;
 
     if (!Validation::name($title)) {
         $em = "Invalid Title";
         Util::redirect("Courses-add.php", "error", $em, $data);
-    }else if (!empty($last_name)) {
+    } else if (!Validation::name($description)) {
         $em = "Invalid description";
         Util::redirect("Courses-add.php", "error", $em, $data);
-    }else {
+    } else {
        if (isset($_FILES['cover']['name'])) {
            $img_name = $_FILES['cover']['name'];
            $tmp_name = $_FILES['cover']['tmp_name'];
            $error = $_FILES['cover']['error'];
+           
+
 
            if($error === 0){
             $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
@@ -52,15 +46,14 @@ session_start();
                $new_img_name = uniqid("COVER-", true).'.'.$img_ex_to_lc;
                $img_upload_path = 'Upload/thumbnail/'.$new_img_name;
                move_uploaded_file($tmp_name, $img_upload_path);
-               // update the Database
                 $cover = $new_img_name;
-            }else {
+            } else {
                $em = "You can't upload files of this type";
-              Util::redirect("Courses-add.php", "error", $em);
+               Util::redirect("Courses-add.php", "error", $em);
             }
-         }else {
-            $em = "unknown error occurred!";
-           Util::redirect("Courses-add.php", "error", $em);
+         } else {
+            $em = "Unknown error occurred!";
+            Util::redirect("Courses-add.php", "error", $em);
          }
        }
 
@@ -73,17 +66,14 @@ session_start();
        if ($res) {
         $sm = "Successfully Created!";
         Util::redirect("Courses-add.php", "success", $sm);
-       }else {
+       } else {
         $em = "An error occurred";
         Util::redirect("Courses-add.php", "error", $em, $data);
        }
        $conn = null;
     }
-    }else {
-        $em = "REQUEST Error";
-        Util::redirect("Courses-add.php", "error", $em);
-    }
-// }else {
-//     $em = "First login ";
-//     Util::redirect("../../login.php", "error", $em);
-// }
+} else {
+    $em = "REQUEST Error";
+    Util::redirect("Courses-add.php", "error", $em);
+}
+?>

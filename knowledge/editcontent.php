@@ -1,8 +1,7 @@
 <?php 
 session_start();
 include "Utils/Util.php";
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
+
     include "Utils/Validation.php";
     include "controller/Database.php";
     include "controller/coursemodel.php";
@@ -26,10 +25,6 @@ include "Utils/Util.php";
    
    Util::redirect("updatecoursecontent.php", "content_id", "");
 }
-// }else {
-      
-//     $em = "First login ";
-//     Util::redirect("../../login.php", "error", $em);
-// }
+
 
 

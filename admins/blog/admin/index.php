@@ -4,16 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link rel="icon" href="../../../assets/img/logo1.jpg" type="image/jpg" sizes="150x130">
 
-  <title>Admin | Blog Site</title>
+  <title>Admin - Manage Blog</title>
  	
 
 <?php
-	// session_start();
  include('./header.php'); 
-//  include('./auth.php'); 
-
-
 
  ?>
 

@@ -6,11 +6,18 @@ session_start();
 <html>
 
 <head>
-    <title>Admin Login</title>
+
+
+<title>StartupCompanion | Navigate your startup journey</title>
+
+    <head>
+    <title>StartupCompanion | Navigate your startup journey</title>
     <link rel="stylesheet" type="text/css" href="../owners/advisorlogin.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/img/logo1.jpg" type="image/jpg" sizes="150x130">
+</head>
 </head>
 
 <body class="hold-transition login-page">
@@ -18,17 +25,16 @@ session_start();
         <div class="login-logo">
 
         </div>
-        <!-- /.login-logo -->
-        <img class="wave" src="../images/wave.jpg">
+        <img class="wave" src="../images/wave1.jpg">
         <div class="container">
             <div class="img">
-                <img src="../images/imgonline-com-ua-ReplaceColor-YFmjdxRxLy9eTky-removebg-preview.png">
+                <img src="../images/img22-removebg-preview.png">
             </div>
             <div class="login-content">
 
                 <form method="post" action="loginadmin.php">
 
-                    <img src="../images/3870822.png">
+                    <img src="../images/proimg.jpg">
                     <h2 class="title">Welcome</h2>
                     <div class="input-div one">
                         <div class="i">
@@ -52,7 +58,7 @@ session_start();
                     <!-- <a href="#">Forgot Password?</a><br> -->
                     <!-- <a style="color: purple;" href="advisorregistration.php">Don't have an account? Create a new account </a> -->
 
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <button type="submit" style="background-color:#0096FF;" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </form>
             </div>
         </div>
@@ -70,24 +76,18 @@ session_start();
     <br>
 
     </div>
-    <!-- /.login-box-body -->
     </div>
-    <!-- /.login-box -->
 
-    <!-- jQuery 3 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
     <script src="js/adminlte.min.js"></script>
-    <!-- iCheck -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
     <script>
         $(function() {
             $('input').iCheck({
                 checkboxClass: 'icheckbox_square-blue',
                 radioClass: 'iradio_square-blue',
-                increaseArea: '20%' // optional
+                increaseArea: '20%' 
             });
         });
     </script>

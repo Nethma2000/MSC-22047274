@@ -3,7 +3,6 @@
 
 $conn = new PDO("mysql:host=localhost;dbname=startupcompanion", "root", "");
  
-// check if FAQ existed
 $sql = "SELECT * FROM faqs WHERE id = ?";
 $statement = $conn->prepare($sql);
 $statement->execute([

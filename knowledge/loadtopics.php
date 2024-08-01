@@ -1,11 +1,9 @@
 <?php 
 session_start();
 include "/Utils/Util.php";
-// if (isset($_SESSION['username']) &&
-//     isset($_SESSION['instructor_id'])) {
+
     include "Utils/Validation.php";
     include "controller/Database.php";
-    // include "../../Models/Course.php";
     include "controller/coursemodel.php";
 
 
@@ -14,7 +12,6 @@ include "/Utils/Util.php";
    if ($_SERVER['REQUEST_METHOD'] == "POST") {
    $chapter_id = Validation::clean($_POST["chapter_id"]);
 
-   // echo "<option> $course_id</option>";
 
    $db = new Database();
    $conn = $db->connect();
@@ -29,10 +26,3 @@ include "/Utils/Util.php";
     echo 0;
    }
 }
-// }else {
-	  
-//     $em = "First login ";
-//     Util::redirect("../../login.php", "error", $em);
-// }
-
-

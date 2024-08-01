@@ -19,7 +19,6 @@
 		$sql = "INSERT INTO owners (name, company, designation,field,mobileno,email,password,medium,linkedin,github,qualifications,work_experience,active)
 		 VALUES ('$name', '$company', '$designation','$field', '$mobileno', '$email','$password','$medium', '$linkedin', '$github','$qualifications', '$work_experience', '$active')";
 
-		//use for MySQLi OOP
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Member added successfully';
 		}

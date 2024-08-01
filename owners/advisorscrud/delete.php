@@ -5,7 +5,6 @@
 	if(isset($_GET['id'])){
 		$sql = "DELETE FROM owners WHERE id_advisor = '".$_GET['id']."'";
 
-		//use for MySQLi OOP
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Member deleted successfully';
 		}

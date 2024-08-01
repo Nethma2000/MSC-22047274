@@ -25,7 +25,7 @@
     height: 2000px;
     width: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #FFC451 0%, #f5c15d 100%);
+    background: linear-gradient(-45deg, #4154F1 0%, #0096FF 100%);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
@@ -157,7 +157,7 @@
 
   .btn {
     width: 150px;
-    background-color: #FFC451;
+    background-color: #0096FF;
     border: none;
     outline: none;
     height: 49px;
@@ -171,7 +171,7 @@
   }
   
   .btn:hover {
-    background-color: #f5a40a;
+    background-color: #4154F1;
   }
 
   .panels-container {
