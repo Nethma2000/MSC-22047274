@@ -50,12 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $mail->IsSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'virajlahiru9719@gmail.com'; // sender's email
-        $mail->Password = 'aznqreyozvyyurrg'; // app password
+        $mail->Username = ''; // sender's email
+        $mail->Password = ''; // app password
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
-        $mail->setFrom('virajlahiru9719@gmail.com', 'Startup Companion'); 
-        $mail->addReplyTo('virajlahiru9719@gmail.com', 'Startup Companion'); 
+        $mail->setFrom('sender email', 'Startup Companion'); 
+        $mail->addReplyTo('sender email', 'Startup Companion'); 
         $mail->addAddress($user_email); 
         $mail->isHTML(true);
         $mail->Subject = 'Status of the Request you sent to the advisor: ' . htmlspecialchars($advisor_name);

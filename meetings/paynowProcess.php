@@ -3,11 +3,11 @@ include '../databaseconnection.php';
 
 $mid = $_GET["mid"];
 
-$merchant_id ="1227807";
+$merchant_id ="";
 $order_id = $mid;
 $amount = "1000";
 $currency = "LKR";
-$merchant_secret = "MjUzNTcxODk1NTI5MjQ3NTM3MDIxNTc2MjYzMjMxMjQxNzE4MDIxOA==";
+$merchant_secret = "";
 
 $hash = strtoupper(
     md5(
